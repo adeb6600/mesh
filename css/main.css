@@ -1,0 +1,90 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+.mL10 {
+  margin-left: 10px;
+}
+
+header .navbar .nav.no-left-divider {
+  background: none;
+}
+
+#trending-carousel li .item-container {
+
+}
+
+#trending-carousel li .item-container .mini-user-info {
+  color: #09F;
+  text-shadow: 0 0 5px cyan;
+  margin-bottom: 5px;
+  height: 19px;
+  overflow: hidden;
+}
+
+#trending-carousel li .item-container .image-content {
+  text-align: center;
+}
+#trending-carousel li .item-container .image-content img {
+  width: 110px;
+}
+
+#trending-carousel li .item-container .item-info a {
+  text-decoration: none;
+  color: #AAA;
+}
+
+#trending-carousel li .item-container .item-info a.icon-fav {
+  margin-left: 5px;
+  padding-left: 18px;
+  background: url(../img/icon-fav.png) no-repeat 0 50%;
+}
+
+
+#send-message-modal{
+  min-width: 400px;
+}
+#send-message-modal .header-popup .text {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+#send-message-modal .header-popup a.tag-friends {
+  background: url(../img/icon-tag-friends.png) no-repeat 0 50%;
+  padding-left: 30px;
+  max-width: 100px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#send-message-modal .header-popup .dropdown-mutual-friends {
+  top: 0;
+  margin-top: 42px;
+  left: 65%;
+  width: 150px;
+}
+
+.dropdown-mutual-friends li {
+  padding: 5px;
+}
+
+.dropdown-mutual-friends li a {
+  text-align: left;
+  color: #0066ff;
+}
+
+.dropdown-mutual-friends li a img {
+  margin-right: 5px;
+}
+
+#send-message-modal .content-popup .avatar {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#send-message-modal .content-popup .user-info {
+  font-size: 14px;
+}
+

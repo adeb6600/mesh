@@ -1,0 +1,102 @@
+/* Tiny Scrollbar */
+#scrollbar1 { width: 200px; margin: 20px 0 0 0px; }
+#scrollbar1 .viewport { width: 180px; height: 400px; overflow: hidden; position: relative; }
+#scrollbar1 .overview {position: absolute; left: 0; top: 0; padding: 0; margin: 0; }
+#scrollbar1 .scrollbar{ background: transparent url(../images/bg-scrollbar-track-y.png) no-repeat 0 0; position: relative; background-position: 0 0; float: right; width: 15px; }
+#scrollbar1 .track { background: transparent url(../images/bg-scrollbar-trackend-y.png) no-repeat 0 100%; height: 100%; width:13px; position: relative; padding: 0 1px; }
+#scrollbar1 .thumb { background: transparent url(../images/bg-scrollbar-thumb-y.png) no-repeat 50% 100%; height: 10px; width: 25px; cursor: pointer; overflow: hidden; position: absolute; top: 0; left: -5px; }
+#scrollbar1 .thumb .end { background: transparent url(../images/bg-scrollbar-thumb-y.png) no-repeat 50% 0; overflow: hidden; height: 5px; width: 25px; }
+#scrollbar1 .disable { display: none; }
+.noSelect { user-select: none; -o-user-select: none; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; }
+
+.span_new{width:200px; padding:20px 0 20px 0px;}
+#scrollbar1 .overview li{ float:left; height:50px; margin:3px 5px 3px 3px;}
+
+#scrollbar1 .overview li span{ float:right !important; margin-right:20px; margin-top:9px; font-size:12px; font-weight:bold; color:#999;}
+
+#scrollbar1 .overview li span a:hover{ color:#0099FF;}
+
+#scrollbar1 .overview li img{ float:left; margin-left:3px; margin-top:4px; border:2px solid #999999; margin-right:12px;}
+
+
+/********Scroll*****************/
+
+#content_1 .overview li{ float:left; height:50px; margin:3px 5px 3px 3px;}
+
+#content_1 .overview li span{ float:right !important; margin-right:20px; margin-top:9px; font-size:11px; font-weight:bold; color:#333;}
+
+#content_1 span:hover{ color:#0099FF;}
+
+#content_1 .overview li img{ float:left; margin-left:3px; margin-top:4px; border:1px solid #999999; margin-right:12px;}
+
+
+/*******Button******************/
+.button{
+	background-color:#f9f9f9;
+	background:linear-gradient(#fcfcfc, #efefef);
+	background:-moz-linear-gradient(#fcfcfc, #efefef);
+	background:-webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#efefef));
+	background:-o-linear-gradient(#fcfcfc, #efefef);
+	border:1px solid #bebebe;
+	text-align:center;
+	margin-right:5px;
+	margin-left:1px;
+	display:block;
+	float:left;
+	-webkit-transition:background 0.5s ease, color 0.3s ease, border-color 0.3s ease;
+	-moz-transition:background 0.5s ease, color 0.3s ease, border-color 0.3s ease;
+	-o-transition:background 0.5s ease, color 0.3s ease, border-color 0.3s ease;
+	-ms-transition:background 0.5s ease, color 0.3s ease, border-color 0.3s ease;
+	transition:background 0.5s ease, color 0.3s ease, border-color 0.3s ease;
+	-webkit-box-shadow:1px 1px 1px rgba(0, 0, 0, .1);
+	-moz-box-shadow:1px 1px 1px rgba(0, 0, 0, .1);
+	box-shadow:1px 1px 1px rgba(0, 0, 0, .1);
+}
+
+.button {
+	background-color:#f9f9f9;
+	background:linear-gradient(#fcfcfc, #f0f0f0);
+	background:-moz-linear-gradient(#fcfcfc, #f0f0f0);
+	background:-webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#f0f0f0));
+	background:-o-linear-gradient(#fcfcfc, #f0f0f0);
+	color:#606060;
+	font-size:12px;
+	font-weight:bold;
+	line-height:28px;
+	padding:0 15px;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+}
+
+.button:hover {
+	color:#0099FF;
+}
+.margin_top{ margin-top:8px;}
+.margin_top a:hover{color:#0099FF;}
+
+
+.button_upload {
+font-family: Verdana;
+text-align:center;
+color: #ffffff;
+font-size: 13px;
+padding: 6px;
+width:70px;
+text-decoration: none;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+-webkit-box-shadow: 0px 1px 3px #666666;
+-moz-box-shadow: 0px 1px 3px #666666;
+box-shadow: 0px 1px 3px #666666;
+border: solid #CCFFFF 4px;
+background: -webkit-gradient(linear, 0 0, 0 100%, from(#9acbed), to(#1983cf));
+background: -moz-linear-gradient(top, #9acbed, #1983cf);
+-ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=#9acbed, endColorStr=#1983cf);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=#9acbed, endColorStr=#1983cf);
+display:inline-block; /* IE is so silly */
+}
+.button_upload:hover {
+background: #34A8FD;
+}
