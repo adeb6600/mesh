@@ -95,12 +95,13 @@
                         <li class="dropdown username" data-toggle="hover-dropdown">
                             <a href="#" class="dropdown-toggle">
                                 <img src="img/avatar-small.jpg" class="menu-avatar">
-                                Christian Williams
+                                <?php echo Yii::app()->user->name ?>
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">settings</a></li>
                                 <li><a href="#">edit profile</a></li>
-                                <li><a href="#">logout</a></li>
+                                <li><?php echo CHtml::link('Change Password', Yii::app()->createUrl('/profile/changePassword')); ?></li>
+                                <li><?php echo CHtml::link('Log Out('.Yii::app()->user->name.')', Yii::app()->createUrl('/site/logout')); ?></li>
                             </ul>
                         </li>
                     </ul>

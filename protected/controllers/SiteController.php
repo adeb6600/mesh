@@ -41,7 +41,7 @@ class SiteController extends Controller
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/mahi
 	
-	$model=new LoginForm;
+		$model=new LoginForm;
 		$model2 = new RegisterForm();
 
 		// if it is ajax validation request
@@ -57,7 +57,7 @@ class SiteController extends Controller
 			$model->attributes=$_POST['LoginForm'];
 			// validate user input and redirect to the previous page if valid
 			if($model->validate() && $model->login())
-				$this->redirect(Yii::app()->user->returnUrl);
+				$this->redirect(Yii::app()->user->homeUrl);
 		}
 		// display the login form
 		$register = $this->renderpartial('register',array('model2'=>$model2 ),true);
@@ -80,6 +80,24 @@ class SiteController extends Controller
 			else
 				$this->render('error', $error);
 		}
+	}
+
+	public function actionVerify($id)
+	{
+		$user = BaseUser::model()->findByPk($id);
+
+		if($user->email_verify != 1)
+		{
+			BaseUser::model()->updateByPk($id, array('email_verify'=>1,'updated_on'=> new CDbExpression('NOW()')));
+			$flag = 1;
+		}
+		else
+			$flag = 0;
+
+		$this->render('verify', array(
+			'user' => $user,
+			'flag' => $flag,
+		));
 	}
 
 	/**
@@ -125,19 +143,20 @@ class SiteController extends Controller
 
 		// collect user input data
 		if(isset($_POST['LoginForm']))
-		{
-		
+		{		
 			$model->attributes=$_POST['LoginForm'];
-		
-			// validate user input and redirect to the previous page if valid
-			if($model->validate()  && $model->login()){
 
-					$this->redirect(Yii::app()->user->returnUrl);
-		}
+			// validate user input and redirect to the previous page if valid
+			if($model->validate() && $model->login()) {
+				$this->redirect($this->createAbsoluteUrl('profile/index'));
+			}
 		}
 		// display the login form
-		$this->render('login',array('model'=>$model));
-		$this->render('register',array('model2'=>$model2));
+
+		/*$this->render('login',array('model'=>$model));
+		$this->render('register',array('model2'=>$model2));*/
+		$register = $this->renderpartial('register',array('model2'=>$model2 ),true);
+		$this->render('login',array('model'=>$model,'registerform'=>$register));
 	}
 
 	/**
@@ -169,49 +188,49 @@ class SiteController extends Controller
 			Yii::app()->end();
 		}
 		
-		if(isset($_POST['RegisterForm'])){
+		if(isset($_POST['RegisterForm']))
+		{
 			$model->attributes = $_POST['RegisterForm'];
-		if($model->validate()){
-// save data to database
-					
-			$regdata = array('email'=>$model->email,'password'=>$model->password, 'emailVerify'=>0,'joinIp'=> Yii::app()->request->userHostAddress);
-		$newUser->email  = $model->email;
-		$newUser->password = crypt($model->password,$model->password);
-		$newUser->emailVerify = 0 ;
-		$newUser->joinIp = Yii::app()->request->userHostAddress;
-			if($newUser->save()){
-                            
-                          // create neo4j user node 
-                       $newneouser = new NeoUser();
-                       $newneoUser->attributes = array('firstname'=> $model->firstname,
-                                                     'lastname'=>$model->lastname,
-                                                    'joinIp'=>Yii::app()->request->userHostAddress);
-                       
-                       $newneouser->save();
-                       
-                       // get all existing locations  based on user selected location 
-                       // this should go into the preview process. 
-                       //i.e on logi user first selects location 
-                       // then user imports frieds  
-                       //then user lands at the mesh main page
-                        
-                            
-			 // send mail to reg
-			 $mail = new YiiMailer('', array('message'=>'Welcome to Mesh start living')); 
-			 $mail->AddAddress($model->email);
-			 $mail->from= 'registration@mesh.com'; 
-			 $mail->FromName = 'Mesh Team';
-			 $mail->Subject = 'Your Mesh Registration'; 
-			 if ($mail->Send()){
-			 	$mail->ClearAddresses();
-			 	Yii::app()->user->setFlash('registraition','Registration Successful : Your activation Mail Has Been Sent');
-			 }
-			 
-				//$this->onRegister = array($this,'do_register');
-			// 	exit();
-			}
-			
-			 	
+			if($model->validate())
+			{
+			// save data to database
+			$regdata = array('first_name'=>$model->first_name,'last_name'=>$model->last_name,'username'=>$model->username, 'email'=>$model->email,'password'=>$model->password, 'email_verify'=>0, 'gender'=>$model->gender,'birth_date'=>$model->birth_date,'created_on'=>$model->created_on, 'last_login_on'=>$model->last_login_on, 'joinIp'=> Yii::app()->request->userHostAddress);
+
+			$newUser->email  = $model->email;
+			$newUser->password = crypt($model->password,$model->password);
+			$newUser->email_verify = 0 ;
+			$newUser->joinIp = Yii::app()->request->userHostAddress;
+			$newUser->first_name = $model->first_name;
+			$newUser->last_name = $model->last_name;
+			$newUser->username = $model->username;
+			$newUser->gender = $model->gender;
+			$newUser->birth_date = $model->birth_date;
+			$newUser->created_on = $model->created_on;
+			$newUser->last_login_on = /*date('Y-m-d h:i:s');//*/ new CDbExpression('NOW()');
+
+				if($newUser->save())
+				{
+	      // create neo4j user node 
+	      	$newneouser = new NeoUser();
+	      	$newneouser->setAttributes(array('firstname'=> $model->first_name,
+	                                     'lastname'=>$model->last_name,
+	                                     'email'=>$model->email,
+	                                    'joinIp'=>Yii::app()->request->userHostAddress));
+	       
+	      	$newneouser->save();
+	                       
+	       // get all existing locations  based on user selected location 
+	       // this should go into the preview process. 
+	       //i.e on logi user first selects location 
+	       // then user imports frieds  
+	       //then user lands at the mesh main page
+	      	$newUser->sendMail($newUser,'verification_mail');
+
+					$this->render('home');
+				 
+					//$this->onRegister = array($this,'do_register');
+				// 	exit();
+				}
 			}
 			
 		}

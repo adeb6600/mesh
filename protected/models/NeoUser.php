@@ -12,7 +12,7 @@ class NeoUser extends ENeo4jNode {
 				
 				'firstname'=>array('type'=>'string'),
 				'lastname'=>array('type'=>'string'),
-				'email'=>array('type'=>'integer'),
+				'email'=>array('type'=>'string'),
 				'joinIp'=>array('type'=>'string'),
 		));
 	}

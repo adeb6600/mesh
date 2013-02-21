@@ -5,14 +5,18 @@
  *
  * The followings are the available columns in table 'base_user':
  * @property integer $id
- * @property string $email
+ * @property string $first_name
+ * @property string $last_name
  * @property string $username
  * @property string $password
- * @property integer $joinStamp
- * @property integer $activityStamp
- * @property string $accountType
- * @property integer $emailVerify
- * @property integer $joinIp
+ * @property string $email
+ * @property integer $email_verify
+ * @property string $birth_date
+ * @property integer $gender
+ * @property string $joinIp
+ * @property string $created_on
+ * @property string $updated_on
+ * @property string $last_login_on
  */
 class BaseUser extends CActiveRecord
 {
@@ -21,6 +25,11 @@ class BaseUser extends CActiveRecord
 	 * @param string $className active record class name.
 	 * @return BaseUser the static model class
 	 */
+
+	public $bdate;
+	public $month;
+	public $year;
+
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
@@ -42,13 +51,13 @@ class BaseUser extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('joinIp ,email', 'required'),
-			array('joinStamp, activityStamp, emailVerify,', 'numerical', 'integerOnly'=>true),
-			array('email', 'length', 'max'=>128),
-		array('password', 'length', 'max'=>64),
-			// The following rule is used by search().
-			// Please remove those attributes that should not be searched.
-			array('id, email, username, password, joinStamp, activityStamp, accountType, emailVerify, joinIp', 'safe', 'on'=>'search'),
+      array('first_name, last_name, username, password, email, joinIp, created_on, last_login_on', 'required'),
+      array('email_verify', 'numerical', 'integerOnly'=>true),
+      array('first_name, last_name, username, password, email, gender, joinIp', 'length', 'max'=>128),
+      array('birth_date, updated_on', 'safe'),
+      // The following rule is used by search().
+      // Please remove those attributes that should not be searched.
+      array('id, first_name, last_name, username, password, email, email_verify, birth_date, gender, joinIp, created_on, updated_on, last_login_on', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -69,16 +78,20 @@ class BaseUser extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'email' => 'Email',
-			'username' => 'Username',
-			'password' => 'Password',
-			'joinStamp' => 'Join Stamp',
-			'activityStamp' => 'Activity Stamp',
-			'accountType' => 'Account Type',
-			'emailVerify' => 'Email Verify',
-			'joinIp' => 'Join Ip',
-		);
+     'id' => 'ID',
+      'first_name' => 'First Name',
+      'last_name' => 'Last Name',
+      'username' => 'Username',
+      'password' => 'Password',
+      'email' => 'Email',
+      'email_verify' => 'Email Verify',
+      'birth_date' => 'Birth Date',
+      'gender' => 'Gender',
+      'joinIp' => 'Join Ip',
+      'created_on' => 'Created On',
+      'updated_on' => 'Updated On',
+      'last_login_on' => 'Last Login On',
+    );
 	}
 
 	/**
@@ -92,18 +105,58 @@ class BaseUser extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
-		$criteria->compare('email',$this->email,true);
-		$criteria->compare('username',$this->username,true);
-		$criteria->compare('password',$this->password,true);
-		$criteria->compare('joinStamp',$this->joinStamp);
-		$criteria->compare('activityStamp',$this->activityStamp);
-		$criteria->compare('accountType',$this->accountType,true);
-		$criteria->compare('emailVerify',$this->emailVerify);
-		$criteria->compare('joinIp',$this->joinIp);
+    $criteria->compare('id',$this->id);
+    $criteria->compare('first_name',$this->first_name,true);
+    $criteria->compare('last_name',$this->last_name,true);
+    $criteria->compare('username',$this->username,true);
+    $criteria->compare('password',$this->password,true);
+    $criteria->compare('email',$this->email,true);
+    $criteria->compare('email_verify',$this->email_verify);
+    $criteria->compare('birth_date',$this->birth_date,true);
+    $criteria->compare('gender',$this->gender);
+    $criteria->compare('joinIp',$this->joinIp,true);
+    $criteria->compare('created_on',$this->created_on,true);
+    $criteria->compare('updated_on',$this->updated_on,true);
+    $criteria->compare('last_login_on',$this->last_login_on,true);
 
-		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-		));
+    return new CActiveDataProvider($this, array(
+        'criteria'=>$criteria,
+    ));
 	}
+
+	public function sendMail($user,$purpose)
+	{
+		if($purpose == 'verification_mail')
+			$verifyLink = Yii::app()->createAbsoluteUrl('site/verify',array('id'=>$user->id));
+
+    $mailer = Yii::createComponent('application.extensions.mailer.EMailer');
+    $mailer->IsSMTP();
+    $mailer->IsHTML(true);
+    $mailer->SMTPAuth = true;
+    $mailer->SMTPSecure = "ssl";
+    $mailer->Host = "smtp.gmail.com";
+    $mailer->Port = 465;
+    $mailer->Username = "info@meshness.com";
+    $mailer->Password = "35er43de";
+    $mailer->From = "dibs.ab@gmail.com";
+    $mailer->FromName = "Mesh Team";
+    $mailer->AddAddress($user->email);
+
+    if($purpose == 'verification_mail')
+    {
+    	$mailer->Subject = "Your Mesh Registration";
+    	$mailer->Body = "Hi,<br/> We are glad to see you on Mesh.  <br/>Welcome to Mesh... Start Living!<br/><br/>
+    		<a href=\"{$verifyLink}\">Click To activate your account</a><br/>
+    		 Login with your <br/> Username: \"{$user->username}\"";
+    } else if ($purpose == 'password_change_mail') {
+    	$mailer->Subject = "Your Password has been changed";
+    	$mailer->Body = "Hello {$user->first_name},<br/> This is just a notification to let you know that you have changed your password.<br/><br/>
+    		Thanks,<br/> Mesh Team.";
+    }
+
+    if(!$mailer->Send()) {
+    	return false;
+  	}
+	}
+
 }
