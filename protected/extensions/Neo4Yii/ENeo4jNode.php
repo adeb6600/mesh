@@ -139,7 +139,7 @@ class ENeo4jNode extends ENeo4jPropertyContainer
                 $this->_traversed[$name]=$class::model()->populateRecord($resultData[0]);
             if($traversal[0]==self::HAS_MANY && isset($resultData[0]) && is_array($resultData[0]))
             {
-                Yii::trace($resultData[0],'TEST');
+      //          Yii::trace($resultData[0],'TEST');
                 $this->_traversed[$name]=$class::model()->populateRecords($resultData);
             }
         }

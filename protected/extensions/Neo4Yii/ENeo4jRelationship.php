@@ -112,7 +112,7 @@ class ENeo4jRelationship extends ENeo4jPropertyContainer
      * @param mixed $id The id.
      * @return ENeo4jRelationship the relationship found. Null if none is found.
      */
-    public function findById($id)
+    public function findById($id ,$params = array())
     {
         Yii::trace(get_class($this).'.findById()','ext.Neo4Yii.ENeo4jRelationship');
         $gremlinQuery=new EGremlinScript;

@@ -29,26 +29,34 @@
     font-style: normal;
 
 }
+
+@font-face {
+        font-family: 'MyriadPro-Regular';
+        src: url('type/myriadproregular.eot');
+        src: url('type/myriadproregular.eot?#iefix') format('embedded-opentype'),
+             url('type/myriadproregular.woff') format('woff'),
+             url('type/myriadproregular.ttf') format('truetype'),
+             url('type/myriadproregular.svg#myriadproregular') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
 a.hiddenanchor{
 	display: none;
 }
+
+#wrapper_login img{ margin:115px 0px 29px 33px;}
 /** The wrapper that will contain our two forms **/
-#wrapper{
-	width: 60%;
-	right: 0px;
-	min-height: 560px;	
-	margin: 7% auto 0 38%;	
-	width: 500px;
-	position: relative;	
+#wrapper_login{
+	margin:0px auto; padding:0px; width:256px; height:auto; overflow:hidden;	
 }
 /**** Styling the form elements **/
 
 /**** general text styling ****/
-#wrapper a{
+#wrapper_login a{
 	text-decoration: none;
 }
 
-#wrapper h1{
+#wrapper_login h1{
 	font-size: 22px;
 	color: rgb(0, 87, 130);
 	padding: 2px 0 10px 0;
@@ -59,7 +67,7 @@ a.hiddenanchor{
 }
 
 /** For the moment only webkit supports the background-clip:text; */
-#wrapper h1{
+#wrapper_login h1{
     background: -webkit-repeating-linear-gradient(-45deg, 
 	rgb(18, 83, 93) , 
 	rgb(18, 83, 93) 20px, 
@@ -69,7 +77,7 @@ a.hiddenanchor{
 	-webkit-text-fill-color: transparent;
 	-webkit-background-clip: text;
 }
-#wrapper h1:after{
+#wrapper_login h1:after{
 	content: ' ';
 	display: block;
 	width: 100%;
@@ -83,24 +91,27 @@ a.hiddenanchor{
 	background: linear-gradient(left, rgba(147,184,189,0) 0%,rgba(147,184,189,0.8) 20%,rgba(147,184,189,1) 53%,rgba(147,184,189,0.8) 79%,rgba(147,184,189,0) 100%); 
 }
 
-#wrapper p{
+#wrapper_login p{
 	margin-bottom:2px;
 }
-#wrapper p:first-child{
+#wrapper_login p:first-child{
 	margin: 0px;
 }
-#wrapper label{
-	color: #9D9D9D;
-	font-size:10px;
-	font-style:italic;
+#wrapper_login label{
+   color: #9D9D9D;
+    font-family: arial;
+    font-size: 9px;
+    position: relative;
+    top: -3px;
 	
 }
-.login-space{margin-top:15px; padding:0 30px 0 42px;}
+.login-space{margin-top:0px; padding:0 10px 0 10px;}
 /**** advanced input styling ****/
 /* placeholder */
 ::-webkit-input-placeholder  { 
 	color: rgb(190, 188, 188); 
 	font-style: italic;
+	top:-5px;
 }
 input:-moz-placeholder,
 textarea:-moz-placeholder{ 
@@ -112,33 +123,41 @@ input {
 }
 
 /* all the input except submit and checkbox */
-#wrapper input:not([type="checkbox"]){
-	width: 70%;
-	margin-top: 4px; margin-left:40px;
-	padding: 10px 5px 10px 12px;	
-	border: 1px solid #B7D9FE;
-	-webkit-appearance: textfield;
-	-webkit-box-sizing: content-box;
-	  -moz-box-sizing : content-box;
-	       box-sizing : content-box;
-	-webkit-border-radius: 3px;
-	   -moz-border-radius: 3px;
-	        border-radius: 3px;
-	-webkit-box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.6) inset;
-	   -moz-box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.6) inset;
-	        box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.6) inset;
-	-webkit-transition: all 0.2s linear;
-	   -moz-transition: all 0.2s linear;
-	     -o-transition: all 0.2s linear;
-	        transition: all 0.2s linear;
+#wrapper_login input:not([type="checkbox"]){
+	width:187px;
+	margin-top:13px; margin-left:8px;
+	padding: 10px 5px 10px 35px;
+	background:#ffffff;
+	border:1px solid #fff;
 }
-#wrapper input:not([type="checkbox"]):active,
-#wrapper input:not([type="checkbox"]):focus{
-	border: 1px solid rgba(0, 136, 170, 0.7);
-	background: rgba(238, 236, 240, 0.2);	
-	-webkit-box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.9) inset;
-	   -moz-box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.9) inset;
-	        box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.9) inset;
+
+#wrapper_login input:not([type="checkbox"]):hover{
+	width:187px;
+	margin-top:13px; margin-left:8px;
+	padding: 10px 5px 10px 35px;	
+		 -moz-box-shadow:   0px 0px 2px 1px #6EBEEC;
+  -webkit-box-shadow: 0px 0px 2px 1px #6EBEEC;
+  box-shadow:         0px 0px 2px 1px #6EBEEC;
+  border:1px solid #6ebeec;
+  -webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+
+}
+
+#wrapper_login p img{ position:relative; margin:0px; top:-25px; left:20px;
+	
+	
+}
+#wrapper_login input:not([type="checkbox"]):active,
+#wrapper_login input:not([type="checkbox"]):focus{
+	 -moz-box-shadow:   0px 0px 2px 1px #6EBEEC;
+  -webkit-box-shadow: 0px 0px 2px 1px #6EBEEC;
+  box-shadow:         0px 0px 2px 1px #6EBEEC;
+  border:1px solid #6ebeec;
+  -webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
 } 
 
 /** the magic icon trick ! **/
@@ -175,8 +194,34 @@ input {
    background:      linear-gradient(top, white, #E0E0E0);
    -pie-background:      linear-gradient(top, white, #E0E0E0);
    box-shadow:         0 1px 2px rgba(0,0,0,0.25), inset 0 0 3px #fff;}
+   
+   
+   
+#sign_up{
+   display:inline-block;
+   border: 1px solid #DDD;
+   border-radius: 3px;
+   text-shadow: 0 1px 1px white;
+   box-shadow:0 1px 1px #fff;
+   font: bold 11px Sans-Serif;
+   padding: 0px 0px !important;
+   margin-left:33% !important;
+   white-space: nowrap;
+   vertical-align: middle;
+   color: #666;
+   background: transparent;
+   cursor: pointer;
+   border-color: #ddd;
+   background-color:#E0E0E0;
+   background: -webkit-linear-gradient(top, white, #E0E0E0);
+   background:    -moz-linear-gradient(top, white, #E0E0E0);
+   background:     -ms-linear-gradient(top, white, #E0E0E0);
+   background:      -o-linear-gradient(top, white, #E0E0E0);
+   background:      linear-gradient(top, white, #E0E0E0);
+   -pie-background:      linear-gradient(top, white, #E0E0E0);
+   box-shadow:         0 1px 2px rgba(0,0,0,0.25), inset 0 0 3px #fff; width:71px !important; height:26px !important; font-size:12px; color:#fff;}
 
-#wrapper p.button input{
+#wrapper_login p.button input{
 
    background: transparent;
    cursor: pointer;
@@ -193,10 +238,10 @@ input {
 	-pie-background: linear-gradient(#62c462, #51a351);
 	border-color: #51A351 #51A351 #387038; }
 
-#wrapper p.button input:hover{
+#wrapper_login p.button input:hover{
 border-color:#295B29; box-shadow:none;}
-#wrapper p.button input:active,
-#wrapper p.button input:focus{
+#wrapper_login p.button input:active,
+#wrapper_login p.button input:focus{
 	background: rgb(40, 137, 154);
 	position: relative;
 	top: 1px;
@@ -233,17 +278,18 @@ p.signin.button{
 
 p.change_link{
 	position: absolute;
-	color: rgb(127, 124, 124);
+	color:#666;
 	left: 0px;
 	width: 83%;
-	font-size: 12px	;
+	font-size: 10px	;
+	font-family:Arial, Helvetica, sans-serif;
 	text-align: right;
 	-webkit-border-radius: 0 0  5px 5px;
 	   -moz-border-radius: 0 0  5px 5px;
 	        border-radius: 0 0  5px 5px;
 			margin:10px 0 20px 0;
 }
-#wrapper p.change_link a {
+#wrapper_login p.change_link a {
 	display: inline-block;
 	font-weight: bold;
 	background: rgb(247, 248, 241);
@@ -261,31 +307,50 @@ p.change_link{
 	-ms-transition: all 0.4s  linear;
 	transition: all 0.4s  linear;
 }
-#wrapper p.change_link a:hover {
+#wrapper_login p.change_link a:hover {
 	color: rgb(57, 191, 215);
 	background: rgb(247, 247, 247);
 	border: 1px solid rgb(74, 179, 198);
 }
-#wrapper p.change_link a:active{
+#wrapper_login p.change_link a:active{
 	position: relative;
 	top: 1px;
 }
 /** Styling both forms **/
-#register, 
+ 
 #login{
-	position: absolute;
+	position: relative;
 	top: 0px;
-	padding: 30px 8% 50px 6%;
+	padding:0px;
 	margin: 0 0 10px 0;
     background: rgba(251, 253, 254, 0.5);
-	-moz-box-shadow: 5px 5px 5px #888;
-    -webkit-box-shadow: 5px 5px 5px #888;
-			  box-shadow: 5px 5px 5px #888;
+	-moz-box-shadow: 1px 1px 3px #888;
+    -webkit-box-shadow: 1px 1px 3px #888;
+			  box-shadow: 1px 1px 3px #888;
 		 			  border: #B7D9FE 2px solid; 
 			  -moz-border-radius: 8px; 
 			  -webkit-border-radius: 8px; 
 			  border-radius: 8px; -khtml-border-radius: 8px;
-			  width:52%
+			  width:246px;
+			  padding-bottom:60px;
+
+			
+}
+#register{
+	position: relative;
+	top: 0px;
+	padding:0px;
+	margin: 0 0 10px 0;
+    background: rgba(251, 253, 254, 0.5);
+	-moz-box-shadow: 1px 1px 3px #888;
+    -webkit-box-shadow: 1px 1px 3px #888;
+			  box-shadow: 1px 1px 3px #888;
+		 			  border: #B7D9FE 2px solid; 
+			  -moz-border-radius: 8px; 
+			  -webkit-border-radius: 8px; 
+			  border-radius: 8px; -khtml-border-radius: 8px;
+			  width:246px;
+			  padding-bottom:0px;
 
 			
 }
@@ -296,8 +361,8 @@ p.change_link{
 #login{
 	z-index: 22;
 }
-#toregister:target ~ #wrapper #register,
-#tologin:target ~ #wrapper #login{
+#toregister:target ~ #wrapper_login #register,
+#tologin:target ~ #wrapper_login #login{
 	z-index: 22;
 	-webkit-animation-name: fadeInLeft;
 	-moz-animation-name: fadeInLeft;
@@ -310,14 +375,26 @@ p.change_link{
 	-ms-animation-delay: .1s;
 	animation-delay: .1s;
 }
-#toregister:target ~ #wrapper #login,
-#tologin:target ~ #wrapper #register{
+#toregister:target ~ #wrapper_login #login,
+#tologin:target ~ #wrapper_login #register{
 	-webkit-animation-name: fadeOutLeftBig;
 	-moz-animation-name: fadeOutLeftBig;
 	-ms-animation-name: fadeOutLeftBig;
 	-o-animation-name: fadeOutLeftBig;
 	animation-name: fadeOutLeftBig;
 }
+
+#register_date{background: none repeat scroll 0 0 #362f2a;
+    float: left;
+    height: 30px;
+    left: 10px;
+    position: relative;
+    top: -96px;
+    width: 230px;-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;}
+
+#register_date select{ border:none; background:#362f2a; color:#bdbdbd; font-size:12px;  font-family: 'MyriadPro-Regular';  margin-top:6px; margin-left:16px;}
 
 /** the actual animation, credit where due : http://daneden.me/animate/ ***/
 .animate{
@@ -344,15 +421,15 @@ p.change_link{
 
 /** yerk some ugly IE fixes 'cause I know someone will ask "why does it look ugly in IE?", no matter how many warnings I will put in the article */
 
-.lt8 #wrapper input{
+.lt8 #wrapper_login input{
 	padding: 10px 5px 10px 32px;
     width: 92%;
 }
-.lt8 #wrapper input[type=checkbox]{
+.lt8 #wrapper_login input[type=checkbox]{
 	width: 10px;
 	padding: 0;
 }
-.lt8 #wrapper h1{
+.lt8 #wrapper_login h1{
 	color: #066A75;
 }
 .lt8 #register{	
@@ -365,7 +442,7 @@ p.change_link{
 	background: transparent;
 }
 
-.success, .inf { margin-left:40%; width:50px; text-align:center;}
+.success, .inf { margin-left:35%; width:50px; text-align:center;}
 .success{color:#fff;
 	box-shadow:0 1px 2px rgba(0,0,0,0.4);
 	text-shadow:none;

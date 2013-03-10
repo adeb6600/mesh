@@ -123,7 +123,12 @@ class BaseUser extends CActiveRecord
         'criteria'=>$criteria,
     ));
 	}
-
+public function isNewUser(){
+    /*
+     * this function validates if the user is a new user in order to determine the direction the user is pointed to
+     */
+    return false;
+}
 	public function sendMail($user,$purpose)
 	{
 		if($purpose == 'verification_mail')

@@ -4,23 +4,59 @@ class ProfileController extends Controller {
 
 	/*
 	 * the profile controller manages the profile page together with its components
-	 */
-	public function init(){
+	 */ 
+    private $profileUser ; 
+    private $profileUserProfile;
+    public function __construct($id, $module = null) {
+        parent::__construct($id, $module);
+    $this->layout = 'main';
+        
+        
+        
+    }
+    public function init(){
 		// restrict user
 		/// load all necessary profile instructions
-	}
-
+    $this->profileUser = yii::app()->mesh->getUserNode('','adeb6600@gmail.com');
+    $this->profileUserProfile = $this->profileUser->profile;
+  
+            }
+   
+        
   public function actionIndex()
   {
-  	$user = BaseUser::model()->findByPk(Yii::app()->user->id);
-  	$profile = Profile::model()->findByAttributes(array('user_id'=>Yii::app()->user->id));
-
-  	if(is_null($profile))
-  		$profile = new Profile;
-
-  	$this->render('index',array('user'=>$user,'profile'=>$profile));
+      // this loads all personal profile information from the neo4j database
+     
+      
+  //	$user = BaseUser::model()->findByPk(Yii::app()->user->id);
+       
+     	//$profile = Profile::model()->findByAttributes(array('user_id'=>Yii::app()->user->id));
+  
+       
+  	$this->render('index',array('user'=>$this->profileUser,
+                                    'profile'=>  $this->profileUserProfile,
+                                    'location'=>$this->profileUser->location, 
+                                    'basic_info'=>$this->profileUserProfile->get_basic_info(), 
+                                    'family'=>$this->profileUserProfile->get_family(),
+                                    'contact'=>$this->profileUserProfile->get_contact(), 
+                                    'relationship'=>  $this->profileUserProfile->get_relationship()));
   }	
-
+  
+  public function newDisplayPicture(){
+      /*
+       * adds a new profile picture to the profile 
+       * 1. create a new user bucket on riak if its non-existent
+       * generate a unique name for the image
+       * save the image in riak 
+       * store the image path under profile in neo
+       */
+             $profile = $this->profileUserProfile;
+             
+            //retrieve image from form // 
+            if(isset($_POST['Profile'])){
+                  
+            } 
+  }
   public function actionAddDisplayPicture()
   {
   	$user = BaseUser::model()->findByPk(Yii::app()->user->id);
@@ -34,12 +70,13 @@ class ProfileController extends Controller {
     	{
     		$profile->attributes = $_POST['Profile'];
     		$profile->display_picture = CUploadedFile::getInstance($profile,'display_picture');
-				
+                    		
 				if($profile->save())
 				{
 					$path_to_file = Yii::app()->basePath.'/../avatars/'.$user->username.'_avatar.jpg';
 					// $path_to_file = Yii::app()->basePath.'/../avatars/'.$user->username.'_avatar'.$profile->display_picture->getExtensionName();
-					$profile->display_picture->saveAs($path_to_file,true);
+					// rename properly and upload to riak   
+                                        $profile->display_picture->saveAs($path_to_file,true);
 
 					Yii::app()->user->setFlash('success','Avatar uploaded successfully.');
 

@@ -75,4 +75,11 @@ class LoginForm extends CFormModel
 		else
 			return false;
 	}
+        public function isNewUser(){
+            // verifies if a user is new and deterines the page they are redirected to
+        
+            return false;
+        }
+        
 }
+  

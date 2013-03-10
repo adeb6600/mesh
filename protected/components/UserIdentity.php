@@ -20,7 +20,7 @@ class UserIdentity extends CUserIdentity
 	public function authenticate()
 	{
 		$record = BaseUser::model()->findByAttributes(array('username'=>$this->username));
-	
+             
 		if($record===null)
 		{
 			$this->errorCode=self::ERROR_USERNAME_INVALID;

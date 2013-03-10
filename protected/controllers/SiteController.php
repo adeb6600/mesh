@@ -1,5 +1,4 @@
 <?php
-
 class SiteController extends Controller
 {
 	/**
@@ -146,15 +145,22 @@ class SiteController extends Controller
 		{		
 			$model->attributes=$_POST['LoginForm'];
 
+                        
 			// validate user input and redirect to the previous page if valid
 			if($model->validate() && $model->login()) {
-				$this->redirect($this->createAbsoluteUrl('profile/index'));
-			}
+                        
+                            if($model->isNewUser()){
+			
+                                $this->redirect($this->createAbsoluteUrl('start/index'));
+			}else{
+                  
+                        $this->redirect($this->createAbsoluteUrl('profile/index'));
+			    
+                        }
 		}
-		// display the login form
-
-		/*$this->render('login',array('model'=>$model));
-		$this->render('register',array('model2'=>$model2));*/
+                
+                }
+	
 		$register = $this->renderpartial('register',array('model2'=>$model2 ),true);
 		$this->render('login',array('model'=>$model,'registerform'=>$register));
 	}
@@ -216,7 +222,8 @@ class SiteController extends Controller
 	                                     'lastname'=>$model->last_name,
 	                                     'email'=>$model->email,
 	                                    'joinIp'=>Yii::app()->request->userHostAddress));
-	       
+	       /// extend the node totake more data
+               
 	      	$newneouser->save();
 	                       
 	       // get all existing locations  based on user selected location 
@@ -246,7 +253,24 @@ class SiteController extends Controller
 		exit();
 	}
 	
-	public function actionRetrievepassword(){
+	public function actionRetrievePassword(){
 		// retrieves the password of the user
+            // get the user email 
+            $user = new BaseUser();
+            if($_POST['email']){
+                //check if email is set
+          $theUser = $user->findByAttributes(array('email'=>$_POST['email'])) ;     
+            
+    if($theUser){
+        
+  
+                }else{
+                
+                Yii::app()->end();
+                return false;
+                
+            }
 	}
+    }
+
 }
