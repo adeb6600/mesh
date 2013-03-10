@@ -1,7 +1,6 @@
 .elasticbeanstalk/
 /index.php
 /assets/*
-/protected/config/*
 /protected/runtime/*
 *~
 [#]*[#]

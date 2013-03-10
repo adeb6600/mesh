@@ -85,6 +85,8 @@ class ENeo4jNode extends ENeo4jPropertyContainer
         $gremlinQuery->setQuery('g.v(0)');
         return ENeo4jNode::model()->populateRecord($this->getConnection()->queryByGremlin($gremlinQuery)->getData());
     }
+    
+    
 
     /**
      * Define simple traversals with the current node as starting point like this

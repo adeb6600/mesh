@@ -3484,3 +3484,596 @@ Stack trace:
 REQUEST_URI=/meshness/index.php
 HTTP_REFERER=http://localhost/meshness/index.php?r=profile/index
 ---
+2013/03/10 14:07:57 [error] [exception.CException] exception 'CException' with message 'NeoUser and its behaviors do not have a method or closure named "friends".' in C:\xampp\htdocs\meshness\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\meshness\protected\controllers\FriendController.php(35): CComponent->__call('friends', Array)
+#1 C:\xampp\htdocs\meshness\protected\controllers\FriendController.php(35): NeoUser->friends()
+#2 C:\xampp\htdocs\meshness\yii\framework\web\actions\CInlineAction.php(50): FriendController->actionIndex()
+#3 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(283): CController->run('index')
+#7 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('friend/index')
+#8 C:\xampp\htdocs\meshness\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\meshness\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/meshness/index.php?r=friend/index
+---
+2013/03/10 14:08:33 [error] [exception.CException] exception 'CException' with message 'Property "NeoUser.mutualFriends" is not defined.' in C:\xampp\htdocs\meshness\yii\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\meshness\protected\extensions\EActiveResource\EActiveResource.php(269): CComponent->__get('mutualFriends')
+#1 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jNode.php(44): EActiveResource->__get('mutualFriends')
+#2 C:\xampp\htdocs\meshness\protected\controllers\FriendController.php(36): ENeo4jNode->__get('mutualFriends')
+#3 C:\xampp\htdocs\meshness\yii\framework\web\actions\CInlineAction.php(50): FriendController->actionIndex()
+#4 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(283): CController->run('index')
+#8 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('friend/index')
+#9 C:\xampp\htdocs\meshness\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\meshness\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/meshness/index.php?r=friend/index
+---
+2013/03/10 14:08:58 [error] [exception.CException] exception 'CException' with message 'Property "NeoUser.mutualFriends" is not defined.' in C:\xampp\htdocs\meshness\yii\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\meshness\protected\extensions\EActiveResource\EActiveResource.php(269): CComponent->__get('mutualFriends')
+#1 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jNode.php(44): EActiveResource->__get('mutualFriends')
+#2 C:\xampp\htdocs\meshness\protected\controllers\FriendController.php(36): ENeo4jNode->__get('mutualFriends')
+#3 C:\xampp\htdocs\meshness\yii\framework\web\actions\CInlineAction.php(50): FriendController->actionIndex()
+#4 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(283): CController->run('index')
+#8 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('friend/index')
+#9 C:\xampp\htdocs\meshness\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\meshness\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/meshness/index.php?r=friend/index
+---
+2013/03/10 14:30:22 [error] [exception.CException] exception 'CException' with message 'Property "ENeo4jNode.email" is not defined.' in C:\xampp\htdocs\meshness\yii\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\xampp\htdocs\meshness\protected\extensions\EActiveResource\EActiveResource.php(281): CComponent->__set('email', 'kalebryan@yahoo...')
+#1 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jPropertyContainer.php(253): EActiveResource->__set('email', 'kalebryan@yahoo...')
+#2 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jPropertyContainer.php(280): ENeo4jPropertyContainer->populateRecord(Array, true)
+#3 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jNode.php(143): ENeo4jPropertyContainer->populateRecords(Array)
+#4 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jNode.php(42): ENeo4jNode->getTraversed('friends')
+#5 C:\xampp\htdocs\meshness\protected\controllers\FriendController.php(36): ENeo4jNode->__get('friends')
+#6 C:\xampp\htdocs\meshness\yii\framework\web\actions\CInlineAction.php(50): FriendController->actionIndex()
+#7 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(283): CController->run('')
+#11 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('friend')
+#12 C:\xampp\htdocs\meshness\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\meshness\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/meshness/index.php?r=friend
+---
+2013/03/10 14:33:38 [error] [exception.CException] exception 'CException' with message 'Property "ENeo4jNode.email" is not defined.' in C:\xampp\htdocs\meshness\yii\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\xampp\htdocs\meshness\protected\extensions\EActiveResource\EActiveResource.php(281): CComponent->__set('email', 'kalebryan@yahoo...')
+#1 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jPropertyContainer.php(253): EActiveResource->__set('email', 'kalebryan@yahoo...')
+#2 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jPropertyContainer.php(280): ENeo4jPropertyContainer->populateRecord(Array, true)
+#3 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jNode.php(143): ENeo4jPropertyContainer->populateRecords(Array)
+#4 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jNode.php(42): ENeo4jNode->getTraversed('friends')
+#5 C:\xampp\htdocs\meshness\protected\controllers\FriendController.php(36): ENeo4jNode->__get('friends')
+#6 C:\xampp\htdocs\meshness\yii\framework\web\actions\CInlineAction.php(50): FriendController->actionIndex()
+#7 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(283): CController->run('')
+#11 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('friend')
+#12 C:\xampp\htdocs\meshness\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\meshness\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/meshness/index.php?r=friend
+---
+2013/03/10 14:35:09 [error] [exception.CException] exception 'CException' with message 'Property "ENeo4jNode.email" is not defined.' in C:\xampp\htdocs\meshness\yii\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\xampp\htdocs\meshness\protected\extensions\EActiveResource\EActiveResource.php(281): CComponent->__set('email', 'kalebryan@yahoo...')
+#1 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jPropertyContainer.php(253): EActiveResource->__set('email', 'kalebryan@yahoo...')
+#2 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jPropertyContainer.php(280): ENeo4jPropertyContainer->populateRecord(Array, true)
+#3 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jNode.php(143): ENeo4jPropertyContainer->populateRecords(Array)
+#4 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jNode.php(42): ENeo4jNode->getTraversed('friends')
+#5 C:\xampp\htdocs\meshness\protected\controllers\FriendController.php(36): ENeo4jNode->__get('friends')
+#6 C:\xampp\htdocs\meshness\yii\framework\web\actions\CInlineAction.php(50): FriendController->actionIndex()
+#7 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(283): CController->run('')
+#11 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('friend')
+#12 C:\xampp\htdocs\meshness\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\meshness\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/meshness/index.php?r=friend
+---
+2013/03/10 14:40:40 [error] [exception.CException] exception 'CException' with message 'Property "ENeo4jNode.email" is not defined.' in C:\xampp\htdocs\meshness\yii\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\xampp\htdocs\meshness\protected\extensions\EActiveResource\EActiveResource.php(281): CComponent->__set('email', 'kalebryan@yahoo...')
+#1 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jPropertyContainer.php(253): EActiveResource->__set('email', 'kalebryan@yahoo...')
+#2 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jPropertyContainer.php(280): ENeo4jPropertyContainer->populateRecord(Array, true)
+#3 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jNode.php(143): ENeo4jPropertyContainer->populateRecords(Array)
+#4 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jNode.php(42): ENeo4jNode->getTraversed('friends')
+#5 C:\xampp\htdocs\meshness\protected\controllers\FriendController.php(36): ENeo4jNode->__get('friends')
+#6 C:\xampp\htdocs\meshness\yii\framework\web\actions\CInlineAction.php(50): FriendController->actionIndex()
+#7 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(283): CController->run('')
+#11 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('friend')
+#12 C:\xampp\htdocs\meshness\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\meshness\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/meshness/index.php?r=friend
+---
+2013/03/10 14:43:31 [error] [exception.CException] exception 'CException' with message 'Property "ENeo4jNode.email" is not defined.' in C:\xampp\htdocs\meshness\yii\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\xampp\htdocs\meshness\protected\extensions\EActiveResource\EActiveResource.php(281): CComponent->__set('email', 'kalebryan@yahoo...')
+#1 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jPropertyContainer.php(253): EActiveResource->__set('email', 'kalebryan@yahoo...')
+#2 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jPropertyContainer.php(280): ENeo4jPropertyContainer->populateRecord(Array, true)
+#3 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jNode.php(143): ENeo4jPropertyContainer->populateRecords(Array)
+#4 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jNode.php(42): ENeo4jNode->getTraversed('friends')
+#5 C:\xampp\htdocs\meshness\protected\controllers\FriendController.php(36): ENeo4jNode->__get('friends')
+#6 C:\xampp\htdocs\meshness\yii\framework\web\actions\CInlineAction.php(50): FriendController->actionIndex()
+#7 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(283): CController->run('')
+#11 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('friend')
+#12 C:\xampp\htdocs\meshness\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\meshness\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/meshness/index.php?r=friend
+---
+2013/03/10 14:44:19 [error] [exception.CException] exception 'CException' with message 'Property "ENeo4jNode.email" is not defined.' in C:\xampp\htdocs\meshness\yii\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\xampp\htdocs\meshness\protected\extensions\EActiveResource\EActiveResource.php(281): CComponent->__set('email', 'kalebryan@yahoo...')
+#1 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jPropertyContainer.php(253): EActiveResource->__set('email', 'kalebryan@yahoo...')
+#2 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jPropertyContainer.php(280): ENeo4jPropertyContainer->populateRecord(Array, true)
+#3 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jNode.php(143): ENeo4jPropertyContainer->populateRecords(Array)
+#4 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jNode.php(42): ENeo4jNode->getTraversed('friends')
+#5 C:\xampp\htdocs\meshness\protected\controllers\FriendController.php(36): ENeo4jNode->__get('friends')
+#6 C:\xampp\htdocs\meshness\yii\framework\web\actions\CInlineAction.php(50): FriendController->actionIndex()
+#7 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(283): CController->run('')
+#11 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('friend')
+#12 C:\xampp\htdocs\meshness\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\meshness\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/meshness/index.php?r=friend
+---
+2013/03/10 14:44:42 [error] [exception.CException] exception 'CException' with message 'Property "NeoUser.email" is not defined.' in C:\xampp\htdocs\meshness\yii\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\xampp\htdocs\meshness\protected\extensions\EActiveResource\EActiveResource.php(281): CComponent->__set('email', 'adeb6600@gmail....')
+#1 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jPropertyContainer.php(253): EActiveResource->__set('email', 'adeb6600@gmail....')
+#2 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jNode.php(238): ENeo4jPropertyContainer->populateRecord(Array)
+#3 C:\xampp\htdocs\meshness\protected\components\CMesh.php(54): ENeo4jNode->findByAttributes(Array)
+#4 C:\xampp\htdocs\meshness\protected\controllers\FriendController.php(25): CMesh->getUserNode('', 'adeb6600@gmail....')
+#5 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(282): FriendController->init()
+#6 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('friend')
+#7 C:\xampp\htdocs\meshness\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\meshness\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/meshness/index.php?r=friend
+---
+2013/03/10 14:45:00 [error] [exception.CException] exception 'CException' with message 'Property "ENeo4jNode.email" is not defined.' in C:\xampp\htdocs\meshness\yii\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\xampp\htdocs\meshness\protected\extensions\EActiveResource\EActiveResource.php(281): CComponent->__set('email', 'kalebryan@yahoo...')
+#1 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jPropertyContainer.php(253): EActiveResource->__set('email', 'kalebryan@yahoo...')
+#2 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jPropertyContainer.php(280): ENeo4jPropertyContainer->populateRecord(Array, true)
+#3 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jNode.php(143): ENeo4jPropertyContainer->populateRecords(Array)
+#4 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jNode.php(42): ENeo4jNode->getTraversed('friends')
+#5 C:\xampp\htdocs\meshness\protected\controllers\FriendController.php(36): ENeo4jNode->__get('friends')
+#6 C:\xampp\htdocs\meshness\yii\framework\web\actions\CInlineAction.php(50): FriendController->actionIndex()
+#7 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(283): CController->run('')
+#11 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('friend')
+#12 C:\xampp\htdocs\meshness\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\meshness\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/meshness/index.php?r=friend
+---
+2013/03/10 14:45:15 [error] [exception.CException] exception 'CException' with message 'Property "NeoUser.email" is not defined.' in C:\xampp\htdocs\meshness\yii\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\xampp\htdocs\meshness\protected\extensions\EActiveResource\EActiveResource.php(281): CComponent->__set('email', 'adeb6600@gmail....')
+#1 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jPropertyContainer.php(253): EActiveResource->__set('email', 'adeb6600@gmail....')
+#2 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jNode.php(238): ENeo4jPropertyContainer->populateRecord(Array)
+#3 C:\xampp\htdocs\meshness\protected\components\CMesh.php(54): ENeo4jNode->findByAttributes(Array)
+#4 C:\xampp\htdocs\meshness\protected\controllers\FriendController.php(25): CMesh->getUserNode('', 'adeb6600@gmail....')
+#5 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(282): FriendController->init()
+#6 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('friend')
+#7 C:\xampp\htdocs\meshness\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\meshness\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/meshness/index.php?r=friend
+---
+2013/03/10 14:45:21 [error] [exception.CException] exception 'CException' with message 'Property "NeoUser.email" is not defined.' in C:\xampp\htdocs\meshness\yii\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\xampp\htdocs\meshness\protected\extensions\EActiveResource\EActiveResource.php(281): CComponent->__set('email', 'adeb6600@gmail....')
+#1 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jPropertyContainer.php(253): EActiveResource->__set('email', 'adeb6600@gmail....')
+#2 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jNode.php(238): ENeo4jPropertyContainer->populateRecord(Array)
+#3 C:\xampp\htdocs\meshness\protected\components\CMesh.php(54): ENeo4jNode->findByAttributes(Array)
+#4 C:\xampp\htdocs\meshness\protected\controllers\FriendController.php(25): CMesh->getUserNode('', 'adeb6600@gmail....')
+#5 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(282): FriendController->init()
+#6 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('friend')
+#7 C:\xampp\htdocs\meshness\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\meshness\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/meshness/index.php?r=friend
+---
+2013/03/10 14:46:32 [error] [exception.CException] exception 'CException' with message 'Property "ENeo4jNode.lastname" is not defined.' in C:\xampp\htdocs\meshness\yii\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\xampp\htdocs\meshness\protected\extensions\EActiveResource\EActiveResource.php(281): CComponent->__set('lastname', 'bryan')
+#1 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jPropertyContainer.php(253): EActiveResource->__set('lastname', 'bryan')
+#2 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jPropertyContainer.php(280): ENeo4jPropertyContainer->populateRecord(Array, true)
+#3 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jNode.php(143): ENeo4jPropertyContainer->populateRecords(Array)
+#4 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jNode.php(42): ENeo4jNode->getTraversed('friends')
+#5 C:\xampp\htdocs\meshness\protected\controllers\FriendController.php(36): ENeo4jNode->__get('friends')
+#6 C:\xampp\htdocs\meshness\yii\framework\web\actions\CInlineAction.php(50): FriendController->actionIndex()
+#7 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(283): CController->run('')
+#11 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('friend')
+#12 C:\xampp\htdocs\meshness\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\meshness\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/meshness/index.php?r=friend
+---
+2013/03/10 14:47:23 [error] [exception.CException] exception 'CException' with message 'Property "ENeo4jNode.email" is not defined.' in C:\xampp\htdocs\meshness\yii\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\xampp\htdocs\meshness\protected\extensions\EActiveResource\EActiveResource.php(281): CComponent->__set('email', 'kalebryan@yahoo...')
+#1 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jPropertyContainer.php(253): EActiveResource->__set('email', 'kalebryan@yahoo...')
+#2 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jPropertyContainer.php(280): ENeo4jPropertyContainer->populateRecord(Array, true)
+#3 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jNode.php(143): ENeo4jPropertyContainer->populateRecords(Array)
+#4 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jNode.php(42): ENeo4jNode->getTraversed('friends')
+#5 C:\xampp\htdocs\meshness\protected\controllers\FriendController.php(36): ENeo4jNode->__get('friends')
+#6 C:\xampp\htdocs\meshness\yii\framework\web\actions\CInlineAction.php(50): FriendController->actionIndex()
+#7 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(283): CController->run('')
+#11 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('friend')
+#12 C:\xampp\htdocs\meshness\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\meshness\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/meshness/index.php?r=friend
+---
+2013/03/10 15:10:19 [error] [exception.CException] exception 'CException' with message 'Property "ENeo4jNode.email" is not defined.' in C:\xampp\htdocs\meshness\yii\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\xampp\htdocs\meshness\protected\extensions\EActiveResource\EActiveResource.php(281): CComponent->__set('email', 'kalebryan@yahoo...')
+#1 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jPropertyContainer.php(253): EActiveResource->__set('email', 'kalebryan@yahoo...')
+#2 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jPropertyContainer.php(280): ENeo4jPropertyContainer->populateRecord(Array, true)
+#3 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jNode.php(143): ENeo4jPropertyContainer->populateRecords(Array)
+#4 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jNode.php(42): ENeo4jNode->getTraversed('friends')
+#5 C:\xampp\htdocs\meshness\protected\controllers\FriendController.php(36): ENeo4jNode->__get('friends')
+#6 C:\xampp\htdocs\meshness\yii\framework\web\actions\CInlineAction.php(50): FriendController->actionIndex()
+#7 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(283): CController->run('')
+#11 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('friend')
+#12 C:\xampp\htdocs\meshness\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\meshness\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/meshness/index.php?r=friend
+---
+2013/03/10 16:33:49 [error] [php] Undefined variable: id (C:\xampp\htdocs\meshness\protected\models\NeoUser.php:61)
+Stack trace:
+#0 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(287): FriendController->runAction()
+#2 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(266): FriendController->runActionWithFilters()
+#3 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(283): FriendController->run()
+#4 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#5 C:\xampp\htdocs\meshness\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\meshness\index.php(13): CWebApplication->run()
+REQUEST_URI=/meshness/index.php?r=friend/search
+in C:\xampp\htdocs\meshness\protected\models\NeoUser.php (61)
+in C:\xampp\htdocs\meshness\protected\controllers\FriendController.php (70)
+in C:\xampp\htdocs\meshness\index.php (13)
+2013/03/10 16:34:17 [error] [php] Undefined variable: id (C:\xampp\htdocs\meshness\protected\models\NeoUser.php:65)
+Stack trace:
+#0 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(287): FriendController->runAction()
+#2 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(266): FriendController->runActionWithFilters()
+#3 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(283): FriendController->run()
+#4 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#5 C:\xampp\htdocs\meshness\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\meshness\index.php(13): CWebApplication->run()
+REQUEST_URI=/meshness/index.php?r=friend/search
+in C:\xampp\htdocs\meshness\protected\models\NeoUser.php (65)
+in C:\xampp\htdocs\meshness\protected\controllers\FriendController.php (70)
+in C:\xampp\htdocs\meshness\index.php (13)
+2013/03/10 16:34:41 [error] [php] Argument 1 passed to ENeo4jGraphService::queryByGremlin() must be an instance of EGremlinScript, string given, called in C:\xampp\htdocs\meshness\protected\models\NeoUser.php on line 77 and defined (C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jGraphService.php:32)
+Stack trace:
+#0 C:\xampp\htdocs\meshness\yii\framework\web\actions\CInlineAction.php(50): FriendController->actionSearch()
+#1 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(287): FriendController->runAction()
+#3 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(266): FriendController->runActionWithFilters()
+#4 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(283): FriendController->run()
+#5 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#6 C:\xampp\htdocs\meshness\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\meshness\index.php(13): CWebApplication->run()
+REQUEST_URI=/meshness/index.php?r=friend/search
+in C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jGraphService.php (32)
+in C:\xampp\htdocs\meshness\protected\models\NeoUser.php (77)
+in C:\xampp\htdocs\meshness\protected\controllers\FriendController.php (70)
+2013/03/10 16:35:42 [error] [php] Argument 1 passed to ENeo4jGraphService::queryByGremlin() must be an instance of EGremlinScript, string given, called in C:\xampp\htdocs\meshness\protected\models\NeoUser.php on line 79 and defined (C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jGraphService.php:32)
+Stack trace:
+#0 C:\xampp\htdocs\meshness\yii\framework\web\actions\CInlineAction.php(50): FriendController->actionSearch()
+#1 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(287): FriendController->runAction()
+#3 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(266): FriendController->runActionWithFilters()
+#4 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(283): FriendController->run()
+#5 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#6 C:\xampp\htdocs\meshness\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\meshness\index.php(13): CWebApplication->run()
+REQUEST_URI=/meshness/index.php?r=friend/search
+in C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jGraphService.php (32)
+in C:\xampp\htdocs\meshness\protected\models\NeoUser.php (79)
+in C:\xampp\htdocs\meshness\protected\controllers\FriendController.php (70)
+2013/03/10 16:36:06 [error] [exception.EActiveResourceRequestException_BadRequest] exception 'EActiveResourceRequestException_BadRequest' with message 'Error 400 
+
+{
+  "message" : "org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:\r\nScript6.groovy: 89: unexpected token: } @ line 89, column 49.\r\n   (it.location=='Corpus Christi'}.in().fil\r\n                                 ^\r\n\r\n1 error\r\n",
+  "exception" : "BadInputException",
+  "stacktrace" : [ "org.neo4j.server.plugin.gremlin.GremlinPlugin.executeScript(GremlinPlugin.java:88)", "java.lang.reflect.Method.invoke(Method.java:601)", "org.neo4j.server.plugins.PluginMethod.invoke(PluginMethod.java:57)", "org.neo4j.server.plugins.PluginManager.invoke(PluginManager.java:168)", "org.neo4j.server.rest.web.ExtensionService.invokeGraphDatabaseExtension(ExtensionService.java:300)", "org.neo4j.server.rest.web.ExtensionService.invokeGraphDatabaseExtension(ExtensionService.java:122)", "java.lang.reflect.Method.invoke(Method.java:601)" ]
+}' in C:\xampp\htdocs\meshness\protected\extensions\EActiveResource\EActiveResourceResponse.php:105
+Stack trace:
+#0 C:\xampp\htdocs\meshness\protected\extensions\EActiveResource\EActiveResourceConnection.php(122): EActiveResourceResponse->throwError()
+#1 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jGraphService.php(39): EActiveResourceConnection->query(Object(EActiveResourceRequest))
+#2 C:\xampp\htdocs\meshness\protected\models\NeoUser.php(79): ENeo4jGraphService->queryByGremlin(Object(EGremlinScript))
+#3 C:\xampp\htdocs\meshness\protected\controllers\FriendController.php(70): NeoUser->searchFriends(NULL, NULL, NULL)
+#4 C:\xampp\htdocs\meshness\yii\framework\web\actions\CInlineAction.php(50): FriendController->actionSearch()
+#5 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(283): CController->run('search')
+#9 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('friend/search')
+#10 C:\xampp\htdocs\meshness\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\meshness\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/meshness/index.php?r=friend/search
+---
+2013/03/10 16:36:48 [error] [exception.EActiveResourceRequestException_BadRequest] exception 'EActiveResourceRequestException_BadRequest' with message 'Error 400 
+
+{
+  "message" : "org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:\r\nScript7.groovy: 89: unexpected token: } @ line 89, column 49.\r\n   (it.location=='Corpus Christi'}.in().fil\r\n                                 ^\r\n\r\n1 error\r\n",
+  "exception" : "BadInputException",
+  "stacktrace" : [ "org.neo4j.server.plugin.gremlin.GremlinPlugin.executeScript(GremlinPlugin.java:88)", "java.lang.reflect.Method.invoke(Method.java:601)", "org.neo4j.server.plugins.PluginMethod.invoke(PluginMethod.java:57)", "org.neo4j.server.plugins.PluginManager.invoke(PluginManager.java:168)", "org.neo4j.server.rest.web.ExtensionService.invokeGraphDatabaseExtension(ExtensionService.java:300)", "org.neo4j.server.rest.web.ExtensionService.invokeGraphDatabaseExtension(ExtensionService.java:122)", "java.lang.reflect.Method.invoke(Method.java:601)" ]
+}' in C:\xampp\htdocs\meshness\protected\extensions\EActiveResource\EActiveResourceResponse.php:105
+Stack trace:
+#0 C:\xampp\htdocs\meshness\protected\extensions\EActiveResource\EActiveResourceConnection.php(122): EActiveResourceResponse->throwError()
+#1 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jGraphService.php(39): EActiveResourceConnection->query(Object(EActiveResourceRequest))
+#2 C:\xampp\htdocs\meshness\protected\models\NeoUser.php(79): ENeo4jGraphService->queryByGremlin(Object(EGremlinScript))
+#3 C:\xampp\htdocs\meshness\protected\controllers\FriendController.php(70): NeoUser->searchFriends(NULL, NULL, NULL)
+#4 C:\xampp\htdocs\meshness\yii\framework\web\actions\CInlineAction.php(50): FriendController->actionSearch()
+#5 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(283): CController->run('search')
+#9 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('friend/search')
+#10 C:\xampp\htdocs\meshness\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\meshness\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/meshness/index.php?r=friend/search
+---
+2013/03/10 16:37:03 [error] [exception.EActiveResourceRequestException_BadRequest] exception 'EActiveResourceRequestException_BadRequest' with message 'Error 400 
+
+{
+  "message" : "org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:\r\nScript8.groovy: 89: unexpected token: } @ line 89, column 49.\r\n   (it.location=='Corpus Christi'}.in().fil\r\n                                 ^\r\n\r\n1 error\r\n",
+  "exception" : "BadInputException",
+  "stacktrace" : [ "org.neo4j.server.plugin.gremlin.GremlinPlugin.executeScript(GremlinPlugin.java:88)", "java.lang.reflect.Method.invoke(Method.java:601)", "org.neo4j.server.plugins.PluginMethod.invoke(PluginMethod.java:57)", "org.neo4j.server.plugins.PluginManager.invoke(PluginManager.java:168)", "org.neo4j.server.rest.web.ExtensionService.invokeGraphDatabaseExtension(ExtensionService.java:300)", "org.neo4j.server.rest.web.ExtensionService.invokeGraphDatabaseExtension(ExtensionService.java:122)", "java.lang.reflect.Method.invoke(Method.java:601)" ]
+}' in C:\xampp\htdocs\meshness\protected\extensions\EActiveResource\EActiveResourceResponse.php:105
+Stack trace:
+#0 C:\xampp\htdocs\meshness\protected\extensions\EActiveResource\EActiveResourceConnection.php(122): EActiveResourceResponse->throwError()
+#1 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jGraphService.php(39): EActiveResourceConnection->query(Object(EActiveResourceRequest))
+#2 C:\xampp\htdocs\meshness\protected\models\NeoUser.php(81): ENeo4jGraphService->queryByGremlin(Object(EGremlinScript))
+#3 C:\xampp\htdocs\meshness\protected\controllers\FriendController.php(70): NeoUser->searchFriends(NULL, NULL, NULL)
+#4 C:\xampp\htdocs\meshness\yii\framework\web\actions\CInlineAction.php(50): FriendController->actionSearch()
+#5 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(283): CController->run('search')
+#9 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('friend/search')
+#10 C:\xampp\htdocs\meshness\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\meshness\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/meshness/index.php?r=friend/search
+---
+2013/03/10 16:37:17 [error] [exception.EActiveResourceRequestException_BadRequest] exception 'EActiveResourceRequestException_BadRequest' with message 'Error 400 
+
+{
+  "message" : "org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:\r\nScript9.groovy: 89: unexpected token: } @ line 89, column 49.\r\n   (it.location=='Corpus Christi'}.in().fil\r\n                                 ^\r\n\r\n1 error\r\n",
+  "exception" : "BadInputException",
+  "stacktrace" : [ "org.neo4j.server.plugin.gremlin.GremlinPlugin.executeScript(GremlinPlugin.java:88)", "java.lang.reflect.Method.invoke(Method.java:601)", "org.neo4j.server.plugins.PluginMethod.invoke(PluginMethod.java:57)", "org.neo4j.server.plugins.PluginManager.invoke(PluginManager.java:168)", "org.neo4j.server.rest.web.ExtensionService.invokeGraphDatabaseExtension(ExtensionService.java:300)", "org.neo4j.server.rest.web.ExtensionService.invokeGraphDatabaseExtension(ExtensionService.java:122)", "java.lang.reflect.Method.invoke(Method.java:601)" ]
+}' in C:\xampp\htdocs\meshness\protected\extensions\EActiveResource\EActiveResourceResponse.php:105
+Stack trace:
+#0 C:\xampp\htdocs\meshness\protected\extensions\EActiveResource\EActiveResourceConnection.php(122): EActiveResourceResponse->throwError()
+#1 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jGraphService.php(39): EActiveResourceConnection->query(Object(EActiveResourceRequest))
+#2 C:\xampp\htdocs\meshness\protected\models\NeoUser.php(82): ENeo4jGraphService->queryByGremlin(Object(EGremlinScript))
+#3 C:\xampp\htdocs\meshness\protected\controllers\FriendController.php(70): NeoUser->searchFriends(NULL, NULL, NULL)
+#4 C:\xampp\htdocs\meshness\yii\framework\web\actions\CInlineAction.php(50): FriendController->actionSearch()
+#5 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(283): CController->run('search')
+#9 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('friend/search')
+#10 C:\xampp\htdocs\meshness\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\meshness\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/meshness/index.php?r=friend/search
+---
+2013/03/10 16:38:06 [error] [exception.EActiveResourceRequestException_BadRequest] exception 'EActiveResourceRequestException_BadRequest' with message 'Error 400 
+
+{
+  "message" : "org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:\r\nScript10.groovy: 89: unexpected token: } @ line 89, column 49.\r\n   (it.location=='Corpus Christi'}.in().fil\r\n                                 ^\r\n\r\n1 error\r\n",
+  "exception" : "BadInputException",
+  "stacktrace" : [ "org.neo4j.server.plugin.gremlin.GremlinPlugin.executeScript(GremlinPlugin.java:88)", "java.lang.reflect.Method.invoke(Method.java:601)", "org.neo4j.server.plugins.PluginMethod.invoke(PluginMethod.java:57)", "org.neo4j.server.plugins.PluginManager.invoke(PluginManager.java:168)", "org.neo4j.server.rest.web.ExtensionService.invokeGraphDatabaseExtension(ExtensionService.java:300)", "org.neo4j.server.rest.web.ExtensionService.invokeGraphDatabaseExtension(ExtensionService.java:122)", "java.lang.reflect.Method.invoke(Method.java:601)" ]
+}' in C:\xampp\htdocs\meshness\protected\extensions\EActiveResource\EActiveResourceResponse.php:105
+Stack trace:
+#0 C:\xampp\htdocs\meshness\protected\extensions\EActiveResource\EActiveResourceConnection.php(122): EActiveResourceResponse->throwError()
+#1 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jGraphService.php(39): EActiveResourceConnection->query(Object(EActiveResourceRequest))
+#2 C:\xampp\htdocs\meshness\protected\models\NeoUser.php(81): ENeo4jGraphService->queryByGremlin(Object(EGremlinScript))
+#3 C:\xampp\htdocs\meshness\protected\controllers\FriendController.php(70): NeoUser->searchFriends(NULL, NULL, NULL)
+#4 C:\xampp\htdocs\meshness\yii\framework\web\actions\CInlineAction.php(50): FriendController->actionSearch()
+#5 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(283): CController->run('search')
+#9 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('friend/search')
+#10 C:\xampp\htdocs\meshness\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\meshness\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/meshness/index.php?r=friend/search
+---
+2013/03/10 16:38:33 [error] [exception.EActiveResourceRequestException_BadRequest] exception 'EActiveResourceRequestException_BadRequest' with message 'Error 400 
+
+{
+  "message" : "org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:\r\nScript11.groovy: 89: unexpected token: } @ line 89, column 49.\r\n   (it.location=='Corpus Christi'}.in().fil\r\n                                 ^\r\n\r\n1 error\r\n",
+  "exception" : "BadInputException",
+  "stacktrace" : [ "org.neo4j.server.plugin.gremlin.GremlinPlugin.executeScript(GremlinPlugin.java:88)", "java.lang.reflect.Method.invoke(Method.java:601)", "org.neo4j.server.plugins.PluginMethod.invoke(PluginMethod.java:57)", "org.neo4j.server.plugins.PluginManager.invoke(PluginManager.java:168)", "org.neo4j.server.rest.web.ExtensionService.invokeGraphDatabaseExtension(ExtensionService.java:300)", "org.neo4j.server.rest.web.ExtensionService.invokeGraphDatabaseExtension(ExtensionService.java:122)", "java.lang.reflect.Method.invoke(Method.java:601)" ]
+}' in C:\xampp\htdocs\meshness\protected\extensions\EActiveResource\EActiveResourceResponse.php:105
+Stack trace:
+#0 C:\xampp\htdocs\meshness\protected\extensions\EActiveResource\EActiveResourceConnection.php(122): EActiveResourceResponse->throwError()
+#1 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jGraphService.php(39): EActiveResourceConnection->query(Object(EActiveResourceRequest))
+#2 C:\xampp\htdocs\meshness\protected\models\NeoUser.php(81): ENeo4jGraphService->queryByGremlin(Object(EGremlinScript))
+#3 C:\xampp\htdocs\meshness\protected\controllers\FriendController.php(70): NeoUser->searchFriends(NULL, NULL, NULL)
+#4 C:\xampp\htdocs\meshness\yii\framework\web\actions\CInlineAction.php(50): FriendController->actionSearch()
+#5 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(283): CController->run('search')
+#9 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('friend/search')
+#10 C:\xampp\htdocs\meshness\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\meshness\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/meshness/index.php?r=friend/search
+---
+2013/03/10 16:40:14 [error] [exception.EActiveResourceRequestException_BadRequest] exception 'EActiveResourceRequestException_BadRequest' with message 'Error 400 
+
+{
+  "message" : "org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:\r\nScript12.groovy: 89: unexpected token: } @ line 89, column 49.\r\n   (it.location=='Corpus Christi'}.in().fil\r\n                                 ^\r\n\r\n1 error\r\n",
+  "exception" : "BadInputException",
+  "stacktrace" : [ "org.neo4j.server.plugin.gremlin.GremlinPlugin.executeScript(GremlinPlugin.java:88)", "java.lang.reflect.Method.invoke(Method.java:601)", "org.neo4j.server.plugins.PluginMethod.invoke(PluginMethod.java:57)", "org.neo4j.server.plugins.PluginManager.invoke(PluginManager.java:168)", "org.neo4j.server.rest.web.ExtensionService.invokeGraphDatabaseExtension(ExtensionService.java:300)", "org.neo4j.server.rest.web.ExtensionService.invokeGraphDatabaseExtension(ExtensionService.java:122)", "java.lang.reflect.Method.invoke(Method.java:601)" ]
+}' in C:\xampp\htdocs\meshness\protected\extensions\EActiveResource\EActiveResourceResponse.php:105
+Stack trace:
+#0 C:\xampp\htdocs\meshness\protected\extensions\EActiveResource\EActiveResourceConnection.php(122): EActiveResourceResponse->throwError()
+#1 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jGraphService.php(39): EActiveResourceConnection->query(Object(EActiveResourceRequest))
+#2 C:\xampp\htdocs\meshness\protected\models\NeoUser.php(81): ENeo4jGraphService->queryByGremlin(Object(EGremlinScript))
+#3 C:\xampp\htdocs\meshness\protected\controllers\FriendController.php(70): NeoUser->searchFriends(NULL, NULL, NULL)
+#4 C:\xampp\htdocs\meshness\yii\framework\web\actions\CInlineAction.php(50): FriendController->actionSearch()
+#5 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(283): CController->run('search')
+#9 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('friend/search')
+#10 C:\xampp\htdocs\meshness\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\meshness\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/meshness/index.php?r=friend/search
+---
+2013/03/10 16:41:06 [error] [exception.EActiveResourceRequestException_BadRequest] exception 'EActiveResourceRequestException_BadRequest' with message 'Error 400 
+
+{
+  "message" : "org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:\r\nScript13.groovy: 89: unexpected token: } @ line 89, column 49.\r\n   (it.location=='Corpus Christi'}.in()\r\n                                 ^\r\n\r\n1 error\r\n",
+  "exception" : "BadInputException",
+  "stacktrace" : [ "org.neo4j.server.plugin.gremlin.GremlinPlugin.executeScript(GremlinPlugin.java:88)", "java.lang.reflect.Method.invoke(Method.java:601)", "org.neo4j.server.plugins.PluginMethod.invoke(PluginMethod.java:57)", "org.neo4j.server.plugins.PluginManager.invoke(PluginManager.java:168)", "org.neo4j.server.rest.web.ExtensionService.invokeGraphDatabaseExtension(ExtensionService.java:300)", "org.neo4j.server.rest.web.ExtensionService.invokeGraphDatabaseExtension(ExtensionService.java:122)", "java.lang.reflect.Method.invoke(Method.java:601)" ]
+}' in C:\xampp\htdocs\meshness\protected\extensions\EActiveResource\EActiveResourceResponse.php:105
+Stack trace:
+#0 C:\xampp\htdocs\meshness\protected\extensions\EActiveResource\EActiveResourceConnection.php(122): EActiveResourceResponse->throwError()
+#1 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jGraphService.php(39): EActiveResourceConnection->query(Object(EActiveResourceRequest))
+#2 C:\xampp\htdocs\meshness\protected\models\NeoUser.php(81): ENeo4jGraphService->queryByGremlin(Object(EGremlinScript))
+#3 C:\xampp\htdocs\meshness\protected\controllers\FriendController.php(70): NeoUser->searchFriends(NULL, NULL, NULL)
+#4 C:\xampp\htdocs\meshness\yii\framework\web\actions\CInlineAction.php(50): FriendController->actionSearch()
+#5 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(283): CController->run('search')
+#9 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('friend/search')
+#10 C:\xampp\htdocs\meshness\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\meshness\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/meshness/index.php?r=friend/search
+---
+2013/03/10 16:42:37 [error] [exception.EActiveResourceRequestException_BadRequest] exception 'EActiveResourceRequestException_BadRequest' with message 'Error 400 
+
+{
+  "message" : "org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:\r\nScript14.groovy: 89: unexpected token: } @ line 89, column 49.\r\n   (it.location=='Corpus Christi'}.in().fil\r\n                                 ^\r\n\r\n1 error\r\n",
+  "exception" : "BadInputException",
+  "stacktrace" : [ "org.neo4j.server.plugin.gremlin.GremlinPlugin.executeScript(GremlinPlugin.java:88)", "java.lang.reflect.Method.invoke(Method.java:601)", "org.neo4j.server.plugins.PluginMethod.invoke(PluginMethod.java:57)", "org.neo4j.server.plugins.PluginManager.invoke(PluginManager.java:168)", "org.neo4j.server.rest.web.ExtensionService.invokeGraphDatabaseExtension(ExtensionService.java:300)", "org.neo4j.server.rest.web.ExtensionService.invokeGraphDatabaseExtension(ExtensionService.java:122)", "java.lang.reflect.Method.invoke(Method.java:601)" ]
+}' in C:\xampp\htdocs\meshness\protected\extensions\EActiveResource\EActiveResourceResponse.php:105
+Stack trace:
+#0 C:\xampp\htdocs\meshness\protected\extensions\EActiveResource\EActiveResourceConnection.php(122): EActiveResourceResponse->throwError()
+#1 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jGraphService.php(39): EActiveResourceConnection->query(Object(EActiveResourceRequest))
+#2 C:\xampp\htdocs\meshness\protected\models\NeoUser.php(81): ENeo4jGraphService->queryByGremlin(Object(EGremlinScript))
+#3 C:\xampp\htdocs\meshness\protected\controllers\FriendController.php(70): NeoUser->searchFriends(NULL, NULL, NULL)
+#4 C:\xampp\htdocs\meshness\yii\framework\web\actions\CInlineAction.php(50): FriendController->actionSearch()
+#5 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(283): CController->run('search')
+#9 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('friend/search')
+#10 C:\xampp\htdocs\meshness\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\meshness\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/meshness/index.php?r=friend/search
+---
+2013/03/10 16:43:09 [error] [exception.EActiveResourceRequestException_BadRequest] exception 'EActiveResourceRequestException_BadRequest' with message 'Error 400 
+
+{
+  "message" : "org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:\r\nScript15.groovy: 89: unexpected token: } @ line 89, column 49.\r\n   (it.location=='Corpus Christi'}.in().fil\r\n                                 ^\r\n\r\n1 error\r\n",
+  "exception" : "BadInputException",
+  "stacktrace" : [ "org.neo4j.server.plugin.gremlin.GremlinPlugin.executeScript(GremlinPlugin.java:88)", "java.lang.reflect.Method.invoke(Method.java:601)", "org.neo4j.server.plugins.PluginMethod.invoke(PluginMethod.java:57)", "org.neo4j.server.plugins.PluginManager.invoke(PluginManager.java:168)", "org.neo4j.server.rest.web.ExtensionService.invokeGraphDatabaseExtension(ExtensionService.java:300)", "org.neo4j.server.rest.web.ExtensionService.invokeGraphDatabaseExtension(ExtensionService.java:122)", "java.lang.reflect.Method.invoke(Method.java:601)" ]
+}' in C:\xampp\htdocs\meshness\protected\extensions\EActiveResource\EActiveResourceResponse.php:105
+Stack trace:
+#0 C:\xampp\htdocs\meshness\protected\extensions\EActiveResource\EActiveResourceConnection.php(122): EActiveResourceResponse->throwError()
+#1 C:\xampp\htdocs\meshness\protected\extensions\Neo4Yii\ENeo4jGraphService.php(39): EActiveResourceConnection->query(Object(EActiveResourceRequest))
+#2 C:\xampp\htdocs\meshness\protected\models\NeoUser.php(81): ENeo4jGraphService->queryByGremlin(Object(EGremlinScript))
+#3 C:\xampp\htdocs\meshness\protected\controllers\FriendController.php(70): NeoUser->searchFriends(NULL, NULL, NULL)
+#4 C:\xampp\htdocs\meshness\yii\framework\web\actions\CInlineAction.php(50): FriendController->actionSearch()
+#5 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(283): CController->run('search')
+#9 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('friend/search')
+#10 C:\xampp\htdocs\meshness\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\meshness\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/meshness/index.php?r=friend/search
+---
+2013/03/10 17:02:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "friendsearch".' in C:\xampp\htdocs\meshness\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(271): CController->missingAction('friendsearch')
+#1 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(283): CController->run('friendsearch')
+#2 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('friend/friendse...')
+#3 C:\xampp\htdocs\meshness\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\meshness\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/meshness/index.php?r=friend/friendsearch
+---
+2013/03/10 17:02:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "fsearch".' in C:\xampp\htdocs\meshness\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(271): CController->missingAction('fsearch')
+#1 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(283): CController->run('fsearch')
+#2 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('friend/fsearch')
+#3 C:\xampp\htdocs\meshness\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\meshness\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/meshness/index.php?r=friend/fsearch
+---
+2013/03/10 17:02:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "friendsearc".' in C:\xampp\htdocs\meshness\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(271): CController->missingAction('friendsearc')
+#1 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(283): CController->run('friendsearc')
+#2 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('friend/friendse...')
+#3 C:\xampp\htdocs\meshness\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\meshness\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/meshness/index.php?r=friend/friendsearc
+---
