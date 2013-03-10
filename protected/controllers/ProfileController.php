@@ -196,6 +196,7 @@ class ProfileController extends Controller {
  }
  
  public function actionFriends(){
+     
  	
  }
  
