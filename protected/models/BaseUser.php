@@ -7,7 +7,6 @@
  * @property integer $id
  * @property string $first_name
  * @property string $last_name
- * @property string $username
  * @property string $password
  * @property string $email
  * @property integer $email_verify
@@ -51,13 +50,13 @@ class BaseUser extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-      array('first_name, last_name, username, password, email, joinIp, created_on, last_login_on', 'required'),
+      array('first_name, last_name, password, email, joinIp, created_on, last_login_on', 'required'),
       array('email_verify', 'numerical', 'integerOnly'=>true),
-      array('first_name, last_name, username, password, email, gender, joinIp', 'length', 'max'=>128),
+      array('first_name, last_name, password, email, gender, joinIp', 'length', 'max'=>128),
       array('birth_date, updated_on', 'safe'),
       // The following rule is used by search().
       // Please remove those attributes that should not be searched.
-      array('id, first_name, last_name, username, password, email, email_verify, birth_date, gender, joinIp, created_on, updated_on, last_login_on', 'safe', 'on'=>'search'),
+      array('id, first_name, last_name, password, email, email_verify, birth_date, gender, joinIp, created_on, updated_on, last_login_on', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -81,7 +80,6 @@ class BaseUser extends CActiveRecord
      'id' => 'ID',
       'first_name' => 'First Name',
       'last_name' => 'Last Name',
-      'username' => 'Username',
       'password' => 'Password',
       'email' => 'Email',
       'email_verify' => 'Email Verify',
@@ -108,7 +106,6 @@ class BaseUser extends CActiveRecord
     $criteria->compare('id',$this->id);
     $criteria->compare('first_name',$this->first_name,true);
     $criteria->compare('last_name',$this->last_name,true);
-    $criteria->compare('username',$this->username,true);
     $criteria->compare('password',$this->password,true);
     $criteria->compare('email',$this->email,true);
     $criteria->compare('email_verify',$this->email_verify);
@@ -139,11 +136,11 @@ public function isNewUser(){
     $mailer->IsHTML(true);
     $mailer->SMTPAuth = true;
     $mailer->SMTPSecure = "ssl";
-    $mailer->Host = "smtp.gmail.com";
+    $mailer->Host = "email-smtp.us-east-1.amazonaws.com";
     $mailer->Port = 465;
     $mailer->Username = "info@meshness.com";
     $mailer->Password = "35er43de";
-    $mailer->From = "dibs.ab@gmail.com";
+    $mailer->From = "info@meshness.com";
     $mailer->FromName = "Mesh Team";
     $mailer->AddAddress($user->email);
 
@@ -152,7 +149,7 @@ public function isNewUser(){
     	$mailer->Subject = "Your Mesh Registration";
     	$mailer->Body = "Hi,<br/> We are glad to see you on Mesh.  <br/>Welcome to Mesh... Start Living!<br/><br/>
     		<a href=\"{$verifyLink}\">Click To activate your account</a><br/>
-    		 Login with your <br/> Username: \"{$user->username}\"";
+    		 Login with your <br/> Username: \"{$user->email}\"";
     } else if ($purpose == 'password_change_mail') {
     	$mailer->Subject = "Your Password has been changed";
     	$mailer->Body = "Hello {$user->first_name},<br/> This is just a notification to let you know that you have changed your password.<br/><br/>

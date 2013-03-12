@@ -69,7 +69,31 @@ class LoginForm extends CFormModel
 		{
 			$duration=$this->rememberMe ? 3600*24*30 : 0; // 30 days
 			Yii::app()->user->login($this->_identity,$duration);
-			BaseUser::model()->updateByPk($this->_identity->id, array('last_login_on'=>new CDbExpression('NOW()')));
+                        // get the user node
+                    // get user by email; 
+                    $auth_user = BaseUser::model()->findByPk($this->_identity->id);
+                   if(is_null($auth_user->usernode)){
+                       // check if node value is not set try and get node
+                   $usernode = Yii::app()->mesh->getUserNodeByEmail($auth_user->email);
+                   
+                    if(is_a($usernode,'NeoUser')){
+                        //if the usernode is set
+            BaseUser::model()->updateByPk($this->_identity->id, array('last_login_on'=>new CDbExpression('NOW()'),
+                                                                  'usernode'=>$usernode->getId())); 
+                    }else{
+                   //redirect to start
+                        	BaseUser::model()->updateByPk($this->_identity->id, array('last_login_on'=>new CDbExpression('NOW()')));
+                  
+                   $this->redirect('start/index');
+                    }     
+                    }
+                   
+                 
+                    
+                 //    $usernode = NeoUser::model()
+		//	BaseUser::model()->updateByPk($this->_identity->id, array('last_login_on'=>new CDbExpression('NOW()')));
+                        // update user 
+                        
 			return true;
 		}
 		else

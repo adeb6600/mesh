@@ -4,7 +4,6 @@ class RegisterForm extends CFormModel {
 	
 	public $first_name; 
 	public $last_name;
-	public $username;
 	public $email;
 	public $email_verify;
 	public $password;
@@ -22,11 +21,11 @@ class RegisterForm extends CFormModel {
 	{
 		return array(
 			// username and password are required
-			array('first_name, last_name, username, password, email', 'required'),
+			array('first_name, last_name, password, email, gender', 'required'),
 			array('email_verify', 'numerical', 'integerOnly'=>true),
 			// array('password','compare'),
-			// array('cpassword','compare','compareAttribute'=>'password'),
-			array('first_name, last_name, username, password, email, gender, joinIp', 'length', 'max'=>128),
+			 array('cpassword','compare','compareAttribute'=>'password'),
+			array('first_name, last_name, password, email, joinIp', 'length', 'max'=>128),
 			array('bdate, month, year, birth_date, joinIp, created_on, updated_on, last_login_on', 'safe'),
 			// rememberMe needs to be a boolean
 		);

@@ -14,7 +14,7 @@ class neoLocation extends ENeo4jNode {
 				'state'=>array('type'=>'string'),
 				'city'=>array('type'=>'string'),
 				'latlong'=>array('type'=>'string'),
-                                	'location'=>array('type'=>'string'),
+                                'location'=>array('type'=>'string'),
 			        
                                 
 		));

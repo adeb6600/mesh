@@ -185,6 +185,7 @@ class SiteController extends Controller
                  *
 		 * 
 		 */
+                
 		$model = new RegisterForm(); 
 		$newUser = new BaseUser();
 		// if it is ajax validation request
@@ -193,51 +194,78 @@ class SiteController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
-		
 		if(isset($_POST['RegisterForm']))
 		{
 			$model->attributes = $_POST['RegisterForm'];
-			if($model->validate())
+		
+                        if($model->validate())
 			{
+               
 			// save data to database
-			$regdata = array('first_name'=>$model->first_name,'last_name'=>$model->last_name,'username'=>$model->username, 'email'=>$model->email,'password'=>$model->password, 'email_verify'=>0, 'gender'=>$model->gender,'birth_date'=>$model->birth_date,'created_on'=>$model->created_on, 'last_login_on'=>$model->last_login_on, 'joinIp'=> Yii::app()->request->userHostAddress);
-
+//		/	$regdata = array('first_name'=>$model->first_name,'last_name'=>$model->last_name, 'email'=>$model->email,'password'=>$model->password, 'email_verify'=>0, 'gender'=>$model->gender,'birth_date'=>$model->birth_date,'created_on'=>$model->created_on, 'last_login_on'=>$model->last_login_on, 'joinIp'=> Yii::app()->request->userHostAddress);
 			$newUser->email  = $model->email;
 			$newUser->password = crypt($model->password,$model->password);
 			$newUser->email_verify = 0 ;
 			$newUser->joinIp = Yii::app()->request->userHostAddress;
 			$newUser->first_name = $model->first_name;
 			$newUser->last_name = $model->last_name;
-			$newUser->username = $model->username;
+		//	$newUser->username = $model->username;
 			$newUser->gender = $model->gender;
 			$newUser->birth_date = $model->birth_date;
 			$newUser->created_on = $model->created_on;
 			$newUser->last_login_on = /*date('Y-m-d h:i:s');//*/ new CDbExpression('NOW()');
-
+    
 				if($newUser->save())
 				{
-	      // create neo4j user node 
+                       	      // create neo4j user node 
 	      	$newneouser = new NeoUser();
 	      	$newneouser->setAttributes(array('firstname'=> $model->first_name,
 	                                     'lastname'=>$model->last_name,
 	                                     'email'=>$model->email,
-	                                    'joinIp'=>Yii::app()->request->userHostAddress));
+	                                    'joinIp'=>Yii::app()->request->userHostAddress,
+                                            'dob'=>$model->birth_date,
+                                            'created_on'=>$model->created_on,
+                                            'gender'=>$model->gender,
+                                            'current_location'=>'null'));
 	       /// extend the node totake more data
                
-	      	$newneouser->save();
-	                       
-	       // get all existing locations  based on user selected location 
-	       // this should go into the preview process. 
-	       //i.e on logi user first selects location 
-	       // then user imports frieds  
-	       //then user lands at the mesh main page
+            	     	$newneouser->save(); //@todo put a lotof safeguards in this place
+	      /*
+               * set initial location 
+               * set initial profile
+               * connect profile  
+               */
+                  $theuser = NeoUser::model()->findByAttributes(array('email'=>$model->email));
+                  $cur_location = neoLocation::model()->findbyAttributes(array('location'=>'Mesh'));
+                  $loc = new LOCATION();
+                  $loc->setStartNode($theuser);
+                  $loc->setEndNode($cur_location);
+                  $loc->save();
+                  
+                  $profile = new neoProfile();
+                  $profile->type='PERSONAL';
+                  $profile->display_name = 'not set';
+                  $profile->hometown = 'not set';
+                  $profile->save();
+               
+                  $rel = new _PROFILE_();
+                  $rel->setStartNode($profile);
+                  $rel->setEndNode($theuser);
+                  $rel->save();
+                  $proprofile = new neoProfile();
+                  $proprofile->type='PROFESSIONAL';
+                  $proprofile->display_name = 'not set';
+                  $proprofile->hometown = 'not set';
+                  $proprofile->save();
+                  
+                  $rel = new _PROFILE_();
+                  $rel->setStartNode($proprofile);
+                  $rel->setEndNode($theuser);
+                  $rel->save();
+                  
 	      	$newUser->sendMail($newUser,'verification_mail');
-
-					$this->render('home');
-				 
-					//$this->onRegister = array($this,'do_register');
-				// 	exit();
-				}
+                $this->redirect($this->createAbsoluteUrl('start/index'));
+                    }
 			}
 			
 		}
@@ -257,6 +285,7 @@ class SiteController extends Controller
 		// retrieves the password of the user
             // get the user email 
             $user = new BaseUser();
+            if(yii::app()->request->isPostRequest){
             if($_POST['email']){
                 //check if email is set
           $theUser = $user->findByAttributes(array('email'=>$_POST['email'])) ;     
@@ -272,5 +301,5 @@ class SiteController extends Controller
             }
 	}
     }
-
+        }
 }

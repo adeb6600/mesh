@@ -17,9 +17,11 @@ class ProfileController extends Controller {
     public function init(){
 		// restrict user
 		/// load all necessary profile instructions
-    $this->profileUser = yii::app()->mesh->getUserNode('','adeb6600@gmail.com');
+     
+    $this->profileUser = yii::app()->mesh->getUserNode();
+        
     $this->profileUserProfile = $this->profileUser->profile;
-  
+    
             }
    
         

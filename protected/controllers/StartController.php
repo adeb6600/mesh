@@ -42,7 +42,7 @@ class StartController extends Controller {
             parent::init();
  // load the current user from neo4j
             
- $this->neoUser =   yii::app()->mesh->getusernode(null,'adeb6600@gmail.com'); 
+ $this->neoUser =   yii::app()->mesh->getusernode(); 
       
 // check if the profile has been created for this user  
    if($this->neoUser){

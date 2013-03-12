@@ -43,8 +43,14 @@
 	                                   <img src="<?php echo Yii::app()->request->baseUrl; ?>/themes/mesh/views/images/login_pass_icon.png">
         	<?php echo $form->error($model2,'cpassword'); ?>
 	</p>
-
-	   <p id="register_date" style="position: relative; top: -80px;"> 
+             <p style="position: relative; top: -70px;"> 
+                 <?php echo $form->label($model2,'gender');?>
+		<?php echo $form->dropDownlist($model2,'gender',array('0'=>'Sex',
+                                                                      'male'=>'Male',
+                                                                      'female'=>'Female')); ?>
+	       <?php echo $form->error($model2,'gender'); ?>
+	</p>
+	   <p id="register_date" style="position: relative; top: -60px;"> 
     <?php echo $form->dropDownList($model2,'month',$model2->monthNames); ?>
     
     <?php echo $form->dropDownList($model2,'bdate',$model2->dates); ?>
@@ -52,16 +58,16 @@
     <?php echo $form->dropDownList($model2,'year',$model2->validYears); ?>
     
   </p>
-       <div class="login-space" style="position: relative; top: -60px;"><p> 
+       <div class="login-space" style="position: relative; top: -50px;"><p> 
 									<input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" /> 
 									<label for="loginkeeping">By sign up you agree to Meshness terms and
 Privacy Policies</label></p></div>
 	
-	<p class='signin button'style="position: relative; top: -70px;">
+	<p class='signin button'style="position: relative; top: -60px;">
 	   <?php echo CHtml::submitButton('SIGN UP')?>
 	</p>
 	
-	<p class='change_link' style="position: relative; top: -80px;">
+	<p class='change_link' style="position: relative; top: -70px;">
 	<?php echo CHtml::link('Log-in','#tologin',array('class'=>'to_register'))?>
 		
 	</p>

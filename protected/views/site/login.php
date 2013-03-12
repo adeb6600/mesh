@@ -6,6 +6,9 @@
 ?>
 
   <img src="<?php echo Yii::app()->request->baseUrl; ?>/themes/mesh/views/images/login_logo.png" />   
+  <div class='messages_status'>
+      <?php echo Yii::app()->user->getFlash('login_message'); ?>
+  </div>
 <div id='login' class="animate form">
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'login-form',

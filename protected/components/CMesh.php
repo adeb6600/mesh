@@ -31,29 +31,62 @@ class CMesh extends CApplicationComponent {
         if(!$this->mesh){
             //if mesh is not an object
        $mesh = new NeoMesh();
-       $this->mesh = $mesh->findById('6');
+       $this->mesh = NeoMesh::model()->findByExactIndexEntry('name','Mesh');
        return $this->mesh;
         }else{
         return $this->Mesh;
         }
     }
     
-   public function getUserNode($nodeid=null,$email){
+   public function getUserNode($nodeid=null){
        /*
+        * //
         * This uses the Mesh Neo object to retrieve the users node
         */
        
        
-       if(!$nodeid){ // if node id isnt set
-           
-           
-    
+       if(is_null($nodeid)){ // if node id isnt set
        
-           $newnode = new NeoUser() ; 
-       
-           $this->usernode = $newnode->findByAttributes(array('email'=>$email));
+       // checkif user is loggedin 
+           if(Yii::app()->user->isGuest){
+          //     $this->raiseEvent ($name, $event)
+               Yii::app()->user->setFlash('login_message','Please Login');
+               Yii::app()->controller->redirect (Yii::app()->controller->createAbsoluteUrl ('site/index'));// this should be changed to an event in the future
+           } 
+           $theuser = BaseUser::model()->findByPk(Yii::app()->user->id);
+         
+           $this->usernode = NeoUser::model()->findByAttributes(array('email'=> $theuser->email));
+           
            return $this->usernode;
            }else{
+           $this->usernode = NeoUser::model()->findbyId(intval($nodeid));
+      
+               return $this->usernode;
+       }
+       
+   }
+   
+   public function getUserNodeByEmail($nodemail=  null){
+       /*
+        * //
+        * This uses the Mesh Neo object to retrieve the users node
+        */
+       
+       
+       if(is_null($nodemail)){ // if node id isnt set
+           
+       // checkif user is loggedin 
+           if(Yii::app()->user->isGuest){
+          //     $this->raiseEvent ($name, $event)
+               Yii::app()->user->setFlash('login_message','Please Login');
+               Yii::app()->controller->redirect (Yii::app()->controller->createAbsoluteUrl ('site/index'));// this should be changed to an event in the future
+           } 
+           $this->usernode = $newnode->findByAttributes(array('email'=>  Yii::app()->user->id));
+           return $this->usernode;
+           }else{
+           $this->usernode = NeoUser::model()->findbyAttributes(array('email'=>$nodemail));
+           
+      
                return $this->usernode;
        }
        

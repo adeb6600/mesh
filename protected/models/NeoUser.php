@@ -18,6 +18,7 @@ class NeoUser extends ENeo4jNode {
                                 'phone_number'=>array('type'=>'string'),
                                 'dob'=>array('type'=>'string'),
                                 'im'=>array('type'=>'string'),
+                                'gender'=>array('type'=>'string'),
 				'joinIp'=>array('type'=>'string'),
                     
 		));
@@ -35,10 +36,10 @@ class NeoUser extends ENeo4jNode {
 	{
 		return array(   
                                 'mesh'=> array(self::HAS_ONE,self::NODE,'out("NETWORK_OF")'),
-                                'location'=>array(self::HAS_ONE,  self::NODE,'outE("LOCATION").inV'),
+                                'location'=>array(self::HAS_ONE,  self::NODE,'out("LOCATION")'),
                                 
-                                'profile'=>array(self::HAS_ONE, self::NODE,'outE("_PROFILE_").inV.filter{it.type=="PERSONAL"}'),
-                                'professionalprofile'=>array(self::HAS_MANY, self::NODE,'outE("_PROFILE_").inV.filter{it.type=="PROFESSIONAL"}'),
+                                'profile'=>array(self::HAS_ONE, self::NODE,'inE("_PROFILE_").outV.filter{it.type=="PERSONAL"}'),
+                                'professionalprofile'=>array(self::HAS_MANY, self::NODE,'inE("_PROFILE_").outV.filter{it.type=="PROFESSIONAL"}'),
 				'friends'=>array(self::HAS_MANY,self::NODEUSER,'both("_FRIEND_")'),
                                 'mutualFriends'=>array(self::HAS_MANY,self::NODE,'out("_FRIEND_")'),
                                 'fof'=>array(self::HAS_MANY,self::NODE,'out("_FRIEND_").out("_FRIEND_")'),  
