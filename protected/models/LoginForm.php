@@ -72,14 +72,18 @@ class LoginForm extends CFormModel
                         // get the user node
                     // get user by email; 
                     $auth_user = BaseUser::model()->findByPk($this->_identity->id);
-                   if(is_null($auth_user->usernode)){
+                   if(is_null($auth_user->usernode) || is_null($auth_user->locationnode)){
                        // check if node value is not set try and get node
                    $usernode = Yii::app()->mesh->getUserNodeByEmail($auth_user->email);
-                   
+
                     if(is_a($usernode,'NeoUser')){
                         //if the usernode is set
+                        //chekc location 
+                        
+                     
             BaseUser::model()->updateByPk($this->_identity->id, array('last_login_on'=>new CDbExpression('NOW()'),
-                                                                  'usernode'=>$usernode->getId())); 
+                                                                  'usernode'=>$usernode->getId(),
+                                                                  'locationnode'=>$usernode->location->getId())); 
                     }else{
                    //redirect to start
                         	BaseUser::model()->updateByPk($this->_identity->id, array('last_login_on'=>new CDbExpression('NOW()')));
