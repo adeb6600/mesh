@@ -70,6 +70,34 @@ class SiteController extends Controller
 	/**
 	 * This is the action to handle external exceptions.
 	 */
+        
+        public function actionMail(){
+           
+				$mail = new YiiMailer('register', array('message' => 'testing mail', 'name' => 'trial', 'description' => 'Contact form'));
+				//render HTML mail, layout is set from config file or with $mail->setLayout('layoutName')
+				$mail->render();
+                                
+				//set properties as usually with PHPMailer
+                                $mail->IsSMTP();
+				$mail->From = 'info@meshness.com';
+				$mail->FromName = 'Mesh';
+				$mail->Subject = 'Mesh Trial';
+				$mail->AddAddress('adeb6600@gmail.com');
+				//send
+				if ($mail->Send()) {
+					$mail->ClearAddresses();
+					Yii::app()->user->setFlash('contact','Thank you for contacting us. We will respond to you as soon as possible.');
+				} else {
+					Yii::app()->user->setFlash('error','Error while sending email: '.$mail->ErrorInfo);
+				}
+				
+			
+                                ///$this->refresh();
+			
+		
+	//	$this->render('trial');
+
+        }
 	public function actionError()
 	{
 		if($error=Yii::app()->errorHandler->error)

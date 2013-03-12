@@ -7,7 +7,7 @@
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'My Web Application',
+	'name'=>'Mesh',
 	'theme'=>'mesh',
 	// preloading 'log' component
 	'preload'=>array('log','bootstrap'),
@@ -16,9 +16,9 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
-		'ext.YiiMailer.YiiMailer',
+		'application.extensions.YiiMailer.YiiMailer',
 		'application.extensions.EActiveResource.*',
-		'application.extensions.Neo4yii.*',		
+		'application.extensions.Neo4Yii.*',		
 	),
 		
 	'modules'=>array(

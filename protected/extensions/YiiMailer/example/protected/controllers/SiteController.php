@@ -61,6 +61,7 @@ class SiteController extends Controller
 				$mail = new YiiMailer('contact', array('message' => $model->body, 'name' => $model->name, 'description' => 'Contact form'));
 				//render HTML mail, layout is set from config file or with $mail->setLayout('layoutName')
 				$mail->render();
+                                
 				//set properties as usually with PHPMailer
 				$mail->From = $model->email;
 				$mail->FromName = $model->name;

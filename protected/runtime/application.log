@@ -4517,3 +4517,34 @@ REQUEST_URI=/meshness/index.php?r=site/login
 in C:\xampp\htdocs\meshness\protected\models\LoginForm.php (77)
 in C:\xampp\htdocs\meshness\protected\controllers\SiteController.php (150)
 in C:\xampp\htdocs\meshness\index.php (13)
+2013/03/12 17:11:19 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "application.views.layouts.mail".' in C:\xampp\htdocs\meshness\yii\framework\web\CController.php:879
+Stack trace:
+#0 C:\xampp\htdocs\meshness\protected\extensions\YiiMailer\YiiMailer.php(246): CController->renderPartial('application.vie...', Array, true)
+#1 C:\xampp\htdocs\meshness\protected\extensions\YiiMailer\YiiMailer.php(230): YiiMailer->MsgHTMLWithLayout('<div>?? Your ha...', 'C:/xampp/htdocs...')
+#2 C:\xampp\htdocs\meshness\protected\controllers\SiteController.php(78): YiiMailer->render()
+#3 C:\xampp\htdocs\meshness\yii\framework\web\actions\CInlineAction.php(50): SiteController->actionMail()
+#4 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(283): CController->run('mail')
+#8 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('site/mail')
+#9 C:\xampp\htdocs\meshness\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\meshness\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/meshness/index.php?r=site/mail
+---
+2013/03/12 17:13:02 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "trial".' in C:\xampp\htdocs\meshness\yii\framework\web\CController.php:879
+Stack trace:
+#0 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(783): CController->renderPartial('trial', NULL, true)
+#1 C:\xampp\htdocs\meshness\protected\controllers\SiteController.php(97): CController->render('trial')
+#2 C:\xampp\htdocs\meshness\yii\framework\web\actions\CInlineAction.php(50): SiteController->actionMail()
+#3 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(283): CController->run('mail')
+#7 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('site/mail')
+#8 C:\xampp\htdocs\meshness\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\meshness\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/meshness/index.php?r=site/mail
+---
