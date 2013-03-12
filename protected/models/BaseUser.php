@@ -160,5 +160,8 @@ public function isNewUser(){
     	return false;
   	}
 	}
-
+public function password_reset(BaseUser $user){
+    // reset a user password details
+    
+}
 }

@@ -285,14 +285,20 @@ class SiteController extends Controller
 		// retrieves the password of the user
             // get the user email 
             $user = new BaseUser();
+            
+            
             if(yii::app()->request->isPostRequest){
             if($_POST['email']){
                 //check if email is set
           $theUser = $user->findByAttributes(array('email'=>$_POST['email'])) ;     
             
     if($theUser){
+       // set flash message; 
         
-  
+              	$newUser->sendMail($theUser,'password_change_mail');
+        
+      Yii::app()->user->setFlash('login_message','Your access details has been reset please check your email');  
+     
                 }else{
                 
                 Yii::app()->end();
@@ -301,5 +307,7 @@ class SiteController extends Controller
             }
 	}
     }
+            $this->render('forgotpassword',  array('model'=>$user));
+                    
         }
 }

@@ -79,14 +79,22 @@ return array(
                    'class'=>'application.extensions.riak.*'
                ),
             
-		'db'=>array(
+		
+            'db'=>array(
+			'connectionString' => 'mysql:host=mesh-db.cswrkp5yiqod.us-east-1.rds.amazonaws.com;dbname=meshdb',
+			'emulatePrepare' => true,
+			'username' => 'mesh',
+			'password' => '35er43de',
+			'charset' => 'utf8',
+		),
+           /* 'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=meshnes',
 			'emulatePrepare' => true,
 			'username' => 'root',
 			'password' => '',
 			'charset' => 'utf8',
 		),
-		
+		*/
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
 			'errorAction'=>'site/error',
