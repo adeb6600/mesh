@@ -4548,3 +4548,48 @@ Stack trace:
 #10 {main}
 REQUEST_URI=/meshness/index.php?r=site/mail
 ---
+2013/03/13 07:02:37 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+' in C:\xampp\htdocs\meshness\yii\framework\db\CDbConnection.php:382
+Stack trace:
+#0 C:\xampp\htdocs\meshness\yii\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\xampp\htdocs\meshness\yii\framework\db\CDbConnection.php(309): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\meshness\yii\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\xampp\htdocs\meshness\yii\framework\base\CApplication.php(431): CModule->getComponent('db')
+#4 C:\xampp\htdocs\meshness\yii\framework\db\ar\CActiveRecord.php(624): CApplication->getDb()
+#5 C:\xampp\htdocs\meshness\yii\framework\db\ar\CActiveRecord.php(2311): CActiveRecord->getDbConnection()
+#6 C:\xampp\htdocs\meshness\yii\framework\db\ar\CActiveRecord.php(388): CActiveRecordMetaData->__construct(Object(BaseUser))
+#7 C:\xampp\htdocs\meshness\yii\framework\db\ar\CActiveRecord.php(403): CActiveRecord::model('BaseUser')
+#8 C:\xampp\htdocs\meshness\yii\framework\db\ar\CActiveRecord.php(78): CActiveRecord->getMetaData()
+#9 C:\xampp\htdocs\meshness\protected\controllers\SiteController.php(75): CActiveRecord->__construct()
+#10 C:\xampp\htdocs\meshness\yii\framework\web\actions\CInlineAction.php(50): SiteController->actionMail()
+#11 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#12 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#13 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(283): CController->run('mail')
+#15 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('site/mail')
+#16 C:\xampp\htdocs\meshness\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\meshness\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/meshness/index.php?r=site/mail
+---
+2013/03/13 07:04:34 [error] [php] stream_socket_enable_crypto(): this stream does not support SSL/crypto (C:\xampp\htdocs\meshness\protected\extensions\mailer\phpmailer\class.smtp.php:197)
+Stack trace:
+#0 C:\xampp\htdocs\meshness\protected\extensions\mailer\phpmailer\class.phpmailer.php(608): PHPMailer->SmtpConnect()
+#1 C:\xampp\htdocs\meshness\protected\extensions\mailer\phpmailer\class.phpmailer.php(511): PHPMailer->SmtpSend()
+#2 unknown(0): PHPMailer->Send()
+#3 C:\xampp\htdocs\meshness\protected\extensions\mailer\EMailer.php(153): call_user_func_array()
+#4 C:\xampp\htdocs\meshness\protected\models\BaseUser.php(158): EMailer->__call()
+#5 C:\xampp\htdocs\meshness\protected\models\BaseUser.php(158): EMailer->Send()
+#6 C:\xampp\htdocs\meshness\protected\controllers\SiteController.php(76): BaseUser->sendMail()
+#7 C:\xampp\htdocs\meshness\yii\framework\web\actions\CInlineAction.php(50): SiteController->actionMail()
+#8 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(287): SiteController->runAction()
+#10 C:\xampp\htdocs\meshness\yii\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#11 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(283): SiteController->run()
+#12 C:\xampp\htdocs\meshness\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#13 C:\xampp\htdocs\meshness\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\meshness\index.php(13): CWebApplication->run()
+REQUEST_URI=/meshness/index.php?r=site/mail
+in C:\xampp\htdocs\meshness\protected\extensions\mailer\phpmailer\class.smtp.php (197)
+in C:\xampp\htdocs\meshness\protected\extensions\mailer\phpmailer\class.phpmailer.php (683)
+in C:\xampp\htdocs\meshness\protected\extensions\mailer\phpmailer\class.phpmailer.php (608)

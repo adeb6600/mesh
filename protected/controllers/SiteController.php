@@ -72,7 +72,9 @@ class SiteController extends Controller
 	 */
         
         public function actionMail(){
-           
+            $user = new BaseUser();
+            $user->sendMail('xyz', 'verification_mail');
+           /*
 				$mail = new YiiMailer('register', array('message' => 'testing mail', 'name' => 'trial', 'description' => 'Contact form'));
 				//render HTML mail, layout is set from config file or with $mail->setLayout('layoutName')
 				$mail->render();
@@ -84,6 +86,7 @@ class SiteController extends Controller
 				$mail->Subject = 'Mesh Trial';
 				$mail->AddAddress('adeb6600@gmail.com');
 				//send
+                                
 				if ($mail->Send()) {
 					$mail->ClearAddresses();
 					Yii::app()->user->setFlash('contact','Thank you for contacting us. We will respond to you as soon as possible.');
@@ -96,7 +99,7 @@ class SiteController extends Controller
 			
 		
 	//	$this->render('trial');
-
+*/
         }
 	public function actionError()
 	{

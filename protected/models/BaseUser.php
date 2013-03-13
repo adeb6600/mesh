@@ -129,27 +129,26 @@ public function isNewUser(){
 	public function sendMail($user,$purpose)
 	{
 		if($purpose == 'verification_mail')
-			$verifyLink = Yii::app()->createAbsoluteUrl('site/verify',array('id'=>$user->id));
+			//$verifyLink = Yii::app()->createAbsoluteUrl('site/verify',array('id'=>$user->id));
 
     $mailer = Yii::createComponent('application.extensions.mailer.EMailer');
     $mailer->IsSMTP();
     $mailer->IsHTML(true);
     $mailer->SMTPAuth = true;
-    $mailer->SMTPSecure = "ssl";
+    $mailer->SMTPSecure = "tls";
     $mailer->Host = "email-smtp.us-east-1.amazonaws.com";
-    $mailer->Port = 465;
-    $mailer->Username = "info@meshness.com";
-    $mailer->Password = "35er43de";
-    $mailer->From = "info@meshness.com";
+    $mailer->Username = "AKIAJ5NJCC25QM7U6XXA";
+    $mailer->Password = "At2Ca/JQ0zs+vMq+ChzrdwfCAkIpLKyQxNJMRoK/zQ96";
+    $mailer->From = "adeb6600@gmail.com";
     $mailer->FromName = "Mesh Team";
-    $mailer->AddAddress($user->email);
+    $mailer->AddAddress('yamtell67@yahoo.co.uk');
 
     if($purpose == 'verification_mail')
     {
     	$mailer->Subject = "Your Mesh Registration";
     	$mailer->Body = "Hi,<br/> We are glad to see you on Mesh.  <br/>Welcome to Mesh... Start Living!<br/><br/>
-    		<a href=\"{$verifyLink}\">Click To activate your account</a><br/>
-    		 Login with your <br/> Username: \"{$user->email}\"";
+    		<a href=\"#\">Click To activate your account</a><br/>
+    		 Login with your <br/> Username: \"xyz\"";
     } else if ($purpose == 'password_change_mail') {
     	$mailer->Subject = "Your Password has been changed";
     	$mailer->Body = "Hello {$user->first_name},<br/> This is just a notification to let you know that you have changed your password.<br/><br/>
