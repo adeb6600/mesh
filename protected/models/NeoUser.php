@@ -38,7 +38,7 @@ class NeoUser extends ENeo4jNode {
                                 'mesh'=> array(self::HAS_ONE,self::NODE,'out("NETWORK_OF")'),
                                 'location'=>array(self::HAS_ONE,  self::NODE,'out("LOCATION")'),
                                 
-                                'profile'=>array(self::HAS_ONE, self::NODE,'inE("_PROFILE_").outV.filter{it.type=="PERSONAL"}'),
+                                 'profile'=>array(self::HAS_ONE, self::NODE,'inE("_PROFILE_").outV.filter{it.type=="PERSONAL"}'),
                                 'professionalprofile'=>array(self::HAS_MANY, self::NODE,'inE("_PROFILE_").outV.filter{it.type=="PROFESSIONAL"}'),
 				'friends'=>array(self::HAS_MANY,self::NODEUSER,'both("_FRIEND_")'),
                                 'mutualFriends'=>array(self::HAS_MANY,self::NODE,'out("_FRIEND_")'),
